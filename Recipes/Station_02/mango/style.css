@@ -1,0 +1,39 @@
+@page {
+    width: 30mm;
+    height: 80mm;
+    padding: 0.5mm;
+    padding-top : 13mm;
+}
+
+img {
+    height: 20mm;
+    image-rendering: pixelated;
+    padding-left:4mm;
+}
+
+.label_1 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 2.3mm;
+    padding-left:8mm;
+}
+
+.label_2 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 2.3mm;
+    padding-left:4mm;
+}
+.label_3 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 2.3mm;
+    padding-left:8mm;
+}
+
+.label_4 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 2.3mm;
+    padding-left:8mm;
+}

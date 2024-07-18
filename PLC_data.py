@@ -34,12 +34,15 @@ class PLC(QThread):
                     self.fendSignal.emit(f"Error:PLC Thread Error:{e}")
             else:
                 try:
-                    command = self.plc.batch_read(dataReg["data1"], data_type=DT.UWORD)
+                    command = self.plc.batch_read(ref_device=dataReg["data1"], data_type=DT.UWORD, read_size=1)
                     match command:
                         case 0:
                             pass
                         case 1:
-                            ntp = self.plc.batch_read()
+                            ntp = self.plc.batch_read(ref_device=dataReg["data2"], read_size=1, data_type=DT.UWORD)
+                except Exception as e:
+                    self.fendSignal.emit(f"Error:PLC Thread Error:{e}")
+
 
     def terminate(self):
         self.runThread = False

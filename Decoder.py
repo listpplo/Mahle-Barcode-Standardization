@@ -53,11 +53,11 @@ def Decoder(constructFile: str, serialNo: int = 1) -> str:
                             time_now = datetime.now().time()
 
                             with open("Config/Timer.yaml", "r+") as file:
-                                data = yaml.load(file, Loader=yaml.SafeLoader)
+                                data1 = yaml.load(file, Loader=yaml.SafeLoader)
 
-                            shift_A = QTime.fromString(data["Shift_A"]).toPython()
-                            shift_B = QTime.fromString(data["Shift_B"]).toPython()
-                            shift_C = QTime.fromString(data["Shift_C"]).toPython()
+                            shift_A = QTime.fromString(data1["Shift_A"]).toPython()
+                            shift_B = QTime.fromString(data1["Shift_B"]).toPython()
+                            shift_C = QTime.fromString(data1["Shift_C"]).toPython()
 
                             if shift_A <= time_now < shift_B:
                                 decoded_data = decoded_data + "A"

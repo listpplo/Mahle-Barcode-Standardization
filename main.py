@@ -2,7 +2,7 @@ import os
 import threading
 import time
 from PySide6.QtGui import QCloseEvent
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidgetItem
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidgetItem, QComboBox
 from PySide6.QtCore import Signal, Slot, Qt, QTimer, QTime, QDate
 from MainWindow import Ui_MainWindow
 from ConnectionWindow import Ui_ConnectionWindow
@@ -11,6 +11,7 @@ from recipeEditWindow import RecipeSubWindow
 from DataWindow import Ui_Data_Win
 from popWindow import Ui_Form
 from namePopup import Ui_getName
+from plcMapping import Ui_PLCMapping
 import yaml
 import subprocess
 import pymelsec as pymc
@@ -25,7 +26,42 @@ import sqlite3
 import pandas as pd
 
 
-# from PLC_data import PLC
+class Mapping(Ui_PLCMapping, QWidget):
+    def __init__(self, StName: str):
+        super().__init__()
+        self.StName = StName
+        self.setupUi(self)
+        self.setWindowTitle(f"Mapping Window : {StName}")
+        self.popup = popUpWindow()
+        self.fileLst = os.listdir(f"Recipes/{StName}")
+        print(self.fileLst)
+
+        # Configuring actions
+        self.pushButton.clicked.connect(self.addData)
+
+    def addData(self):
+        row_count = self.tableWidget.rowCount()
+        self.tableWidget.setRowCount(row_count + 1)
+
+        # generating number for mapping
+        item = QTableWidgetItem(f"{row_count+1}")
+        item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.tableWidget.setItem(row_count, 0, item)
+
+        fileNameSelection = QComboBox()
+        fileNameSelection.addItems(self.fileLst)
+        item2 = QTableWidgetItem(fileNameSelection)
+        item2.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.tableWidget.setItem(row_count, 1, item2)
+
+    def showEvent(self, event):
+        try:
+            with open(f"Config/Mapping-{self.StName}.yaml") as file:
+                data = yaml.load(file, Loader=yaml.SafeLoader)
+        except Exception as e:
+            print(e)
+
+        super().showEvent(event)
 
 
 class ConnWindow(Ui_ConnectionWindow, QWidget):
@@ -69,7 +105,8 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
         heartBeat = self.lineEdit_13.text()
         scanTime = self.lineEdit_7.text()
         plcTimeOut = self.lineEdit_8.text()
-        data = {"data1": data1, "data2": data2, "data3": data3, "data4": data4, "data5": data5, "data6": data6, "heartBeat": heartBeat,
+        data = {"data1": data1, "data2": data2, "data3": data3, "data4": data4, "data5": data5, "data6": data6,
+                "heartBeat": heartBeat,
                 "scanTime": scanTime, "plcTimeOut": plcTimeOut}
         try:
             with open("Config/PLCDataReg.yaml", "w+") as file:
@@ -281,6 +318,10 @@ class RecWindow(Ui_RecipipWindow, QWidget):
         self.pushButton_4.clicked.connect(self.openCreateRecipeSt02)
         self.pushButton_2.clicked.connect(self.loadRecipeSt01)
         self.pushButton_10.clicked.connect(self.deleteRecipe)
+        self.pushButton_5.clicked.connect(self.loadRecipeSt02)
+        self.pushButton_9.clicked.connect(self.deleteRecipe2)
+        self.pushButton_7.clicked.connect(self.loadMappingTable1)
+        self.pushButton_8.clicked.connect(self.loadMappingTable2)
 
         self.loadTable()
         self.loadTable2()
@@ -289,6 +330,14 @@ class RecWindow(Ui_RecipipWindow, QWidget):
         self.getName2 = GetNamePopup("Station_02")
         self.getName.loadSignal.connect(self.loadTable)
         self.getName2.loadSignal.connect(self.loadTable2)
+
+    def loadMappingTable1(self):
+        self.mappingTable = Mapping("Station_01")
+        self.mappingTable.show()
+
+    def loadMappingTable2(self):
+        self.mappingTable2 = Mapping("Station_02")
+        self.mappingTable2.show()
 
     def openCreateRecipeST01(self):
         self.getName.show()
@@ -305,6 +354,15 @@ class RecWindow(Ui_RecipipWindow, QWidget):
             shutil.rmtree(f"Recipes/Station_01/{name}")
             self.loadTable()
 
+    def deleteRecipe2(self):
+        nameLis = self.tableWidget_2.selectedItems()
+        if len(nameLis) != 1:
+            self.popup.whenCall(heading="Error !!", mesg="Please Select one")
+        else:
+            name = nameLis[0].text()
+            shutil.rmtree(f"Recipes/Station_02/{name}")
+            self.loadTable2()
+
     def loadRecipeSt01(self):
         selected = self.tableWidget.selectedItems()
         if len(selected) != 1:
@@ -313,6 +371,15 @@ class RecWindow(Ui_RecipipWindow, QWidget):
             item = selected[0].text()
             self.subRecipeWindow = RecipeSubWindow(f"Station_01-{item}")
             self.subRecipeWindow.show()
+
+    def loadRecipeSt02(self):
+        selected = self.tableWidget_2.selectedItems()
+        if len(selected) != 1:
+            self.popup.whenCall(heading="Error !!", mesg="Please Select One Option")
+        else:
+            item = selected[0].text()
+            self.subRecipeWindow2 = RecipeSubWindow(f"Station_02-{item}")
+            self.subRecipeWindow2.show()
 
     def loadTable(self):
         recipeList = os.listdir("Recipes/Station_01")

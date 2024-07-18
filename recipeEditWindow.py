@@ -42,7 +42,7 @@ class RecipeSubWindow(Ui_SubWindow, QWidget):
         self.pushButton_27.clicked.connect(self.generateLabel4Data)
         self.pushButton_30.clicked.connect(self.generateLabelPrint)
         self.pushButton_28.clicked.connect(self.saveGenCode)
-        self.setFixedSize(610, 502)
+        self.setFixedSize(800, 502)
         self.popup = popUpWindow()
         self.name = None
 
@@ -768,64 +768,32 @@ class RecipeSubWindow(Ui_SubWindow, QWidget):
     def generateLabelPrint(self):
         print("GeneratingBarcode")
         print_count = self.spinBox_2.value()
-        counter_increament = self.checkBox_6.isChecked()
-        if counter_increament == True:
-            start_counter = self.spinBox.value()
+        barcode = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[0]}", serialNo=self.spinBox.value())
+        label_1 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[1]}", serialNo=self.spinBox.value())
+        label_2 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[2]}", serialNo=self.spinBox.value())
+        label_3 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[3]}", serialNo=self.spinBox.value())
+        label_4 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[4]}", serialNo=self.spinBox.value())
+        labels = [label_1, label_2, label_3, label_4]
+
+        label_writer = LabelWriter(f"Recipes/{self.name[0]}/{self.name[1]}/template.html",
+                                default_stylesheets=(f"Recipes/{self.name[0]}/{self.name[1]}/style.css",))
+        records = [
+            dict(sample_id=barcode, sample_name=labels)
+        ]
+
+        label_writer.write_labels(records, target='testLabel.pdf')
+
+        with open("Config/PrinterData.yaml") as file:
+            data = yaml.load(file, Loader=yaml.SafeLoader)
+
+        if self.name[0] == "Station_01":
             for i in range(print_count):
                 print(f"Print Count: {i}")
-                barcode = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[0]}", serialNo=start_counter)
-                label_1 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[1]}", serialNo=start_counter)
-                label_2 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[2]}", serialNo=start_counter)
-                label_3 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[3]}", serialNo=start_counter)
-                label_4 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[4]}", serialNo=start_counter)
-                labels = [label_1, label_2, label_3, label_4]
-
-                label_writer = LabelWriter(f"Recipes/{self.name[0]}/{self.name[1]}/template.html",
-                                        default_stylesheets=(f"Recipes/{self.name[0]}/{self.name[1]}/style.css",))
-                records = [
-                    dict(sample_id=barcode, sample_name=labels)
-                ]
-
-                label_writer.write_labels(records, target='testLabel.pdf')
-
-                with open("Config/PrinterData.yaml") as file:
-                    data = yaml.load(file, Loader=yaml.SafeLoader)
-
-                if self.name[0] == "Station_01":
-                    for i in range(2):
-                        os.system(f'PDFtoPrinter.exe testLabel.pdf -p "{data["st_01_printer"]}"')
-                if self.name[1] == "Station_02":
-                    os.system(f'PDFtoPrinter.exe label.pdf -p "{data["st_02_printer"]}"')
-                start_counter += 1
-
-        else:
-            barcode = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[0]}", serialNo=self.spinBox.value())
-            label_1 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[1]}", serialNo=self.spinBox.value())
-            label_2 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[2]}", serialNo=self.spinBox.value())
-            label_3 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[3]}", serialNo=self.spinBox.value())
-            label_4 = Decoder(f"Recipes/{self.name[0]}/{self.name[1]}/{self.fileList[4]}", serialNo=self.spinBox.value())
-            labels = [label_1, label_2, label_3, label_4]
-
-            label_writer = LabelWriter(f"Recipes/{self.name[0]}/{self.name[1]}/template.html",
-                                    default_stylesheets=(f"Recipes/{self.name[0]}/{self.name[1]}/style.css",))
-            records = [
-                dict(sample_id=barcode, sample_name=labels)
-            ]
-
-            label_writer.write_labels(records, target='testLabel.pdf')
-
-            with open("Config/PrinterData.yaml") as file:
-                data = yaml.load(file, Loader=yaml.SafeLoader)
-
-            if self.name[0] == "Station_01":
-                for i in range(print_count):
-                    print(f"Print Count: {i}")
-                    os.system(f'PDFtoPrinter.exe testLabel.pdf -p "{data["st_01_printer"]}"')
-            if self.name[1] == "Station_02":
-                os.system(f'PDFtoPrinter.exe label.pdf -p "{data["st_02_printer"]}"')
+                os.system(f'PDFtoPrinter.exe testLabel.pdf -p "{data["st_01_printer"]}"')
+        if self.name[1] == "Station_02":
+            os.system(f'PDFtoPrinter.exe label.pdf -p "{data["st_02_printer"]}"')
 
         self.popup.whenCall(heading="Success !!", mesg="Print Successful")
-        
 
     def saveGenCode(self):
         css = (f"\n"

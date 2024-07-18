@@ -1,0 +1,31 @@
+img:
+  height: 10.0
+  p_left: 5.0
+  p_top: 0.0
+  width: 10.0
+label_1:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 0.0
+  p_top: 0.0
+label_2:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 1.0
+  p_top: 0.0
+label_3:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 1.0
+  p_top: 0.0
+label_4:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 1.0
+  p_top: 0.0
+page:
+  height: 25.0
+  p_left: 6.0
+  p_top: 2.0
+  width: 20.0
+serialNo: 0

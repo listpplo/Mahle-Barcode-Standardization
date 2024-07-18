@@ -27,7 +27,7 @@ class Ui_ConnectionWindow(object):
         if not ConnectionWindow.objectName():
             ConnectionWindow.setObjectName(u"ConnectionWindow")
         ConnectionWindow.setWindowModality(Qt.WindowModal)
-        ConnectionWindow.resize(586, 465)
+        ConnectionWindow.resize(551, 514)
         self.verticalLayout = QVBoxLayout(ConnectionWindow)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(ConnectionWindow)
@@ -165,128 +165,21 @@ class Ui_ConnectionWindow(object):
 
         self.gridLayout.addWidget(self.lineEdit_5, 0, 2, 1, 1)
 
-        self.label_6 = QLabel(self.tab)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout.addWidget(self.label_6, 3, 0, 1, 1)
-
-        self.lineEdit_4 = QLineEdit(self.tab)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.lineEdit_4, 1, 1, 1, 1)
-
-        self.lineEdit_12 = QLineEdit(self.tab)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
-        self.lineEdit_12.setAlignment(Qt.AlignCenter)
-        self.lineEdit_12.setReadOnly(True)
-
-        self.gridLayout.addWidget(self.lineEdit_12, 3, 2, 1, 1)
-
-        self.label_7 = QLabel(self.tab)
-        self.label_7.setObjectName(u"label_7")
-
-        self.gridLayout.addWidget(self.label_7, 2, 0, 1, 1)
-
-        self.pushButton_4 = QPushButton(self.tab)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setStyleSheet(u"QPushButton::hover{\n"
-"	background-color: rgb(71, 255, 20);\n"
-"}\n"
-"")
-        self.pushButton_4.setCheckable(False)
-
-        self.gridLayout.addWidget(self.pushButton_4, 10, 2, 1, 1)
-
-        self.lineEdit_10 = QLineEdit(self.tab)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
-        self.lineEdit_10.setAlignment(Qt.AlignCenter)
-        self.lineEdit_10.setReadOnly(True)
-
-        self.gridLayout.addWidget(self.lineEdit_10, 2, 2, 1, 1)
-
-        self.lineEdit_6 = QLineEdit(self.tab)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setAlignment(Qt.AlignCenter)
-        self.lineEdit_6.setReadOnly(True)
-
-        self.gridLayout.addWidget(self.lineEdit_6, 1, 2, 1, 1)
-
         self.lineEdit_9 = QLineEdit(self.tab)
         self.lineEdit_9.setObjectName(u"lineEdit_9")
         self.lineEdit_9.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.lineEdit_9, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_9, 4, 1, 1, 1)
 
-        self.pushButton_6 = QPushButton(self.tab)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setStyleSheet(u"QPushButton::hover{\n"
-"	background-color: rgb(255, 28, 89);\n"
-"}\n"
-"\n"
-"QPushButton::checked{\n"
-"	background-color: rgb(255, 28, 89);\n"
-"}")
-        self.pushButton_6.setCheckable(False)
+        self.label_7 = QLabel(self.tab)
+        self.label_7.setObjectName(u"label_7")
 
-        self.gridLayout.addWidget(self.pushButton_6, 10, 1, 1, 1)
+        self.gridLayout.addWidget(self.label_7, 4, 0, 1, 1)
 
-        self.lineEdit_14 = QLineEdit(self.tab)
-        self.lineEdit_14.setObjectName(u"lineEdit_14")
-        self.lineEdit_14.setAlignment(Qt.AlignCenter)
+        self.label_20 = QLabel(self.tab)
+        self.label_20.setObjectName(u"label_20")
 
-        self.gridLayout.addWidget(self.lineEdit_14, 4, 1, 1, 1)
-
-        self.pushButton_5 = QPushButton(self.tab)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setStyleSheet(u"QPushButton::hover{\n"
-"	background-color:  rgb(255, 23, 15);\n"
-"}\n"
-"\n"
-"QPushButton::checked{\n"
-"	background-color:  rgb(255, 23, 15);\n"
-"}")
-
-        self.gridLayout.addWidget(self.pushButton_5, 9, 2, 1, 1)
-
-        self.lineEdit_13 = QLineEdit(self.tab)
-        self.lineEdit_13.setObjectName(u"lineEdit_13")
-        self.lineEdit_13.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.lineEdit_13, 6, 1, 1, 1)
-
-        self.lineEdit_11 = QLineEdit(self.tab)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
-        self.lineEdit_11.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.lineEdit_11, 3, 1, 1, 1)
-
-        self.label_10 = QLabel(self.tab)
-        self.label_10.setObjectName(u"label_10")
-
-        self.gridLayout.addWidget(self.label_10, 6, 0, 1, 1)
-
-        self.lineEdit_7 = QLineEdit(self.tab)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-        self.lineEdit_7.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.lineEdit_7, 7, 1, 1, 1)
-
-        self.label_4 = QLabel(self.tab)
-        self.label_4.setObjectName(u"label_4")
-
-        self.gridLayout.addWidget(self.label_4, 0, 0, 1, 1)
-
-        self.lineEdit_15 = QLineEdit(self.tab)
-        self.lineEdit_15.setObjectName(u"lineEdit_15")
-        self.lineEdit_15.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.lineEdit_15, 5, 1, 1, 1)
-
-        self.label_8 = QLabel(self.tab)
-        self.label_8.setObjectName(u"label_8")
-
-        self.gridLayout.addWidget(self.label_8, 7, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_20, 7, 0, 1, 1)
 
         self.pushButton_3 = QPushButton(self.tab)
         self.pushButton_3.setObjectName(u"pushButton_3")
@@ -299,33 +192,123 @@ class Ui_ConnectionWindow(object):
 "}")
         self.pushButton_3.setCheckable(True)
 
-        self.gridLayout.addWidget(self.pushButton_3, 9, 1, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_3, 13, 1, 1, 1)
+
+        self.lineEdit_8 = QLineEdit(self.tab)
+        self.lineEdit_8.setObjectName(u"lineEdit_8")
+        self.lineEdit_8.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_8, 12, 1, 1, 1)
 
         self.label_9 = QLabel(self.tab)
         self.label_9.setObjectName(u"label_9")
 
-        self.gridLayout.addWidget(self.label_9, 8, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_9, 12, 0, 1, 1)
+
+        self.lineEdit_16 = QLineEdit(self.tab)
+        self.lineEdit_16.setObjectName(u"lineEdit_16")
+        self.lineEdit_16.setAlignment(Qt.AlignCenter)
+        self.lineEdit_16.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_16, 8, 2, 1, 1)
+
+        self.label_19 = QLabel(self.tab)
+        self.label_19.setObjectName(u"label_19")
+
+        self.gridLayout.addWidget(self.label_19, 6, 0, 1, 1)
+
+        self.lineEdit_6 = QLineEdit(self.tab)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.lineEdit_6.setAlignment(Qt.AlignCenter)
+        self.lineEdit_6.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_6, 1, 2, 1, 1)
+
+        self.label_6 = QLabel(self.tab)
+        self.label_6.setObjectName(u"label_6")
+
+        self.gridLayout.addWidget(self.label_6, 5, 0, 1, 1)
+
+        self.pushButton_6 = QPushButton(self.tab)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setStyleSheet(u"QPushButton::hover{\n"
+"	background-color: rgb(255, 28, 89);\n"
+"}\n"
+"\n"
+"QPushButton::checked{\n"
+"	background-color: rgb(255, 28, 89);\n"
+"}")
+        self.pushButton_6.setCheckable(False)
+
+        self.gridLayout.addWidget(self.pushButton_6, 14, 1, 1, 1)
+
+        self.lineEdit_17 = QLineEdit(self.tab)
+        self.lineEdit_17.setObjectName(u"lineEdit_17")
+        self.lineEdit_17.setAlignment(Qt.AlignCenter)
+        self.lineEdit_17.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_17, 9, 2, 1, 1)
+
+        self.label_18 = QLabel(self.tab)
+        self.label_18.setObjectName(u"label_18")
+
+        self.gridLayout.addWidget(self.label_18, 2, 0, 1, 1)
+
+        self.pushButton_4 = QPushButton(self.tab)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setStyleSheet(u"QPushButton::hover{\n"
+"	background-color: rgb(71, 255, 20);\n"
+"}\n"
+"")
+        self.pushButton_4.setCheckable(False)
+
+        self.gridLayout.addWidget(self.pushButton_4, 14, 2, 1, 1)
+
+        self.lineEdit_13 = QLineEdit(self.tab)
+        self.lineEdit_13.setObjectName(u"lineEdit_13")
+        self.lineEdit_13.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_13, 10, 1, 1, 1)
+
+        self.label_17 = QLabel(self.tab)
+        self.label_17.setObjectName(u"label_17")
+
+        self.gridLayout.addWidget(self.label_17, 9, 0, 1, 1)
+
+        self.lineEdit_15 = QLineEdit(self.tab)
+        self.lineEdit_15.setObjectName(u"lineEdit_15")
+        self.lineEdit_15.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_15, 9, 1, 1, 1)
 
         self.label_5 = QLabel(self.tab)
         self.label_5.setObjectName(u"label_5")
 
         self.gridLayout.addWidget(self.label_5, 1, 0, 1, 1)
 
-        self.label_17 = QLabel(self.tab)
-        self.label_17.setObjectName(u"label_17")
+        self.lineEdit_21 = QLineEdit(self.tab)
+        self.lineEdit_21.setObjectName(u"lineEdit_21")
+        self.lineEdit_21.setAlignment(Qt.AlignCenter)
+        self.lineEdit_21.setReadOnly(True)
 
-        self.gridLayout.addWidget(self.label_17, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_21, 6, 2, 1, 1)
 
-        self.lineEdit_8 = QLineEdit(self.tab)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-        self.lineEdit_8.setAlignment(Qt.AlignCenter)
+        self.lineEdit_4 = QLineEdit(self.tab)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.lineEdit_8, 8, 1, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_4, 1, 1, 1, 1)
 
-        self.label_16 = QLabel(self.tab)
-        self.label_16.setObjectName(u"label_16")
+        self.lineEdit_18 = QLineEdit(self.tab)
+        self.lineEdit_18.setObjectName(u"lineEdit_18")
+        self.lineEdit_18.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.label_16, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_18, 2, 1, 1, 1)
+
+        self.label_10 = QLabel(self.tab)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout.addWidget(self.label_10, 10, 0, 1, 1)
 
         self.lineEdit_3 = QLineEdit(self.tab)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
@@ -333,19 +316,108 @@ class Ui_ConnectionWindow(object):
 
         self.gridLayout.addWidget(self.lineEdit_3, 0, 1, 1, 1)
 
-        self.lineEdit_16 = QLineEdit(self.tab)
-        self.lineEdit_16.setObjectName(u"lineEdit_16")
-        self.lineEdit_16.setAlignment(Qt.AlignCenter)
-        self.lineEdit_16.setReadOnly(True)
+        self.lineEdit_19 = QLineEdit(self.tab)
+        self.lineEdit_19.setObjectName(u"lineEdit_19")
+        self.lineEdit_19.setAlignment(Qt.AlignCenter)
+        self.lineEdit_19.setReadOnly(True)
 
-        self.gridLayout.addWidget(self.lineEdit_16, 4, 2, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_19, 2, 2, 1, 1)
 
-        self.lineEdit_17 = QLineEdit(self.tab)
-        self.lineEdit_17.setObjectName(u"lineEdit_17")
-        self.lineEdit_17.setAlignment(Qt.AlignCenter)
-        self.lineEdit_17.setReadOnly(True)
+        self.label_8 = QLabel(self.tab)
+        self.label_8.setObjectName(u"label_8")
 
-        self.gridLayout.addWidget(self.lineEdit_17, 5, 2, 1, 1)
+        self.gridLayout.addWidget(self.label_8, 11, 0, 1, 1)
+
+        self.label_16 = QLabel(self.tab)
+        self.label_16.setObjectName(u"label_16")
+
+        self.gridLayout.addWidget(self.label_16, 8, 0, 1, 1)
+
+        self.pushButton_5 = QPushButton(self.tab)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setStyleSheet(u"QPushButton::hover{\n"
+"	background-color:  rgb(255, 23, 15);\n"
+"}\n"
+"\n"
+"QPushButton::checked{\n"
+"	background-color:  rgb(255, 23, 15);\n"
+"}")
+
+        self.gridLayout.addWidget(self.pushButton_5, 13, 2, 1, 1)
+
+        self.lineEdit_11 = QLineEdit(self.tab)
+        self.lineEdit_11.setObjectName(u"lineEdit_11")
+        self.lineEdit_11.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_11, 5, 1, 1, 1)
+
+        self.lineEdit_12 = QLineEdit(self.tab)
+        self.lineEdit_12.setObjectName(u"lineEdit_12")
+        self.lineEdit_12.setAlignment(Qt.AlignCenter)
+        self.lineEdit_12.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_12, 5, 2, 1, 1)
+
+        self.label_4 = QLabel(self.tab)
+        self.label_4.setObjectName(u"label_4")
+
+        self.gridLayout.addWidget(self.label_4, 0, 0, 1, 1)
+
+        self.lineEdit_14 = QLineEdit(self.tab)
+        self.lineEdit_14.setObjectName(u"lineEdit_14")
+        self.lineEdit_14.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_14, 8, 1, 1, 1)
+
+        self.lineEdit_22 = QLineEdit(self.tab)
+        self.lineEdit_22.setObjectName(u"lineEdit_22")
+        self.lineEdit_22.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_22, 7, 1, 1, 1)
+
+        self.lineEdit_7 = QLineEdit(self.tab)
+        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.lineEdit_7.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_7, 11, 1, 1, 1)
+
+        self.lineEdit_20 = QLineEdit(self.tab)
+        self.lineEdit_20.setObjectName(u"lineEdit_20")
+        self.lineEdit_20.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_20, 6, 1, 1, 1)
+
+        self.lineEdit_10 = QLineEdit(self.tab)
+        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.lineEdit_10.setAlignment(Qt.AlignCenter)
+        self.lineEdit_10.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_10, 4, 2, 1, 1)
+
+        self.label_21 = QLabel(self.tab)
+        self.label_21.setObjectName(u"label_21")
+
+        self.gridLayout.addWidget(self.label_21, 3, 0, 1, 1)
+
+        self.lineEdit_23 = QLineEdit(self.tab)
+        self.lineEdit_23.setObjectName(u"lineEdit_23")
+        self.lineEdit_23.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.lineEdit_23, 3, 1, 1, 1)
+
+        self.lineEdit_24 = QLineEdit(self.tab)
+        self.lineEdit_24.setObjectName(u"lineEdit_24")
+        self.lineEdit_24.setAlignment(Qt.AlignCenter)
+        self.lineEdit_24.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_24, 7, 2, 1, 1)
+
+        self.lineEdit_25 = QLineEdit(self.tab)
+        self.lineEdit_25.setObjectName(u"lineEdit_25")
+        self.lineEdit_25.setAlignment(Qt.AlignCenter)
+        self.lineEdit_25.setReadOnly(True)
+
+        self.gridLayout.addWidget(self.lineEdit_25, 3, 2, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -537,7 +609,7 @@ class Ui_ConnectionWindow(object):
         self.pushButton_5.clicked["bool"].connect(self.pushButton_3.click)
         self.pushButton_6.clicked["bool"].connect(ConnectionWindow.close)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(ConnectionWindow)
@@ -552,19 +624,23 @@ class Ui_ConnectionWindow(object):
         self.pushButton_2.setText(QCoreApplication.translate("ConnectionWindow", u"Cancel", None))
         self.pushButton.setText(QCoreApplication.translate("ConnectionWindow", u"Save", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabWidgetPage1), QCoreApplication.translate("ConnectionWindow", u"PLC Settings", None))
-        self.label_6.setText(QCoreApplication.translate("ConnectionWindow", u"Print Count ST-02 :", None))
         self.label_7.setText(QCoreApplication.translate("ConnectionWindow", u"PLC Comamnd ST-02 :", None))
-        self.pushButton_4.setText(QCoreApplication.translate("ConnectionWindow", u"Save", None))
-        self.pushButton_6.setText(QCoreApplication.translate("ConnectionWindow", u"Close", None))
-        self.pushButton_5.setText(QCoreApplication.translate("ConnectionWindow", u"Stop", None))
-        self.label_10.setText(QCoreApplication.translate("ConnectionWindow", u"Heart Beat Server :", None))
-        self.label_4.setText(QCoreApplication.translate("ConnectionWindow", u"PLC Comamnd ST-01 :", None))
-        self.label_8.setText(QCoreApplication.translate("ConnectionWindow", u"Scan Time (s) :", None))
+        self.label_20.setText(QCoreApplication.translate("ConnectionWindow", u"Response Reg. ST-02 :", None))
         self.pushButton_3.setText(QCoreApplication.translate("ConnectionWindow", u"Monitor", None))
         self.label_9.setText(QCoreApplication.translate("ConnectionWindow", u"PLC Timeout (s) : ", None))
-        self.label_5.setText(QCoreApplication.translate("ConnectionWindow", u"Print Count ST-01 :", None))
+        self.label_19.setText(QCoreApplication.translate("ConnectionWindow", u"Serial No. ST-02 :", None))
+        self.label_6.setText(QCoreApplication.translate("ConnectionWindow", u"Print Count ST-02 :", None))
+        self.pushButton_6.setText(QCoreApplication.translate("ConnectionWindow", u"Close", None))
+        self.label_18.setText(QCoreApplication.translate("ConnectionWindow", u"Serial No. ST-01 :", None))
+        self.pushButton_4.setText(QCoreApplication.translate("ConnectionWindow", u"Save", None))
         self.label_17.setText(QCoreApplication.translate("ConnectionWindow", u"Barcode St-02 :", None))
+        self.label_5.setText(QCoreApplication.translate("ConnectionWindow", u"Print Count ST-01 :", None))
+        self.label_10.setText(QCoreApplication.translate("ConnectionWindow", u"Heart Beat Server :", None))
+        self.label_8.setText(QCoreApplication.translate("ConnectionWindow", u"Scan Time (s) :", None))
         self.label_16.setText(QCoreApplication.translate("ConnectionWindow", u"Barcode St-01 :", None))
+        self.pushButton_5.setText(QCoreApplication.translate("ConnectionWindow", u"Stop", None))
+        self.label_4.setText(QCoreApplication.translate("ConnectionWindow", u"PLC Comamnd ST-01 :", None))
+        self.label_21.setText(QCoreApplication.translate("ConnectionWindow", u"Response Reg. ST-01 :", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("ConnectionWindow", u"Data Reg. Setting", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("ConnectionWindow", u"Printer Settings for Stations", None))
         self.label_11.setText(QCoreApplication.translate("ConnectionWindow", u"ST-01 Printer :", None))

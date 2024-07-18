@@ -26,7 +26,7 @@ class Ui_SubWindow(object):
         if not SubWindow.objectName():
             SubWindow.setObjectName(u"SubWindow")
         SubWindow.setWindowModality(Qt.ApplicationModal)
-        SubWindow.resize(610, 502)
+        SubWindow.resize(800, 472)
         self.verticalLayout = QVBoxLayout(SubWindow)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(SubWindow)
@@ -2423,7 +2423,7 @@ class Ui_SubWindow(object):
 
         self.retranslateUi(SubWindow)
 
-        self.tabWidget.setCurrentIndex(5)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(SubWindow)
