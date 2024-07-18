@@ -1,0 +1,30 @@
+img:
+  height: 9.5
+  p_left: 4.5
+  p_top: 0.0
+  width: 9.5
+label_1:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 0.0
+  p_top: 0.0
+label_2:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 1.0
+  p_top: 0.0
+label_3:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 1.0
+  p_top: 0.0
+label_4:
+  font-size: 1.8
+  font-weight: bold
+  p_left: 1.0
+  p_top: 0.0
+page:
+  height: 25.0
+  p_left: 2.0
+  p_top: 6.0
+  width: 20.0

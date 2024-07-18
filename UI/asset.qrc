@@ -1,0 +1,58 @@
+<RCC>
+  <qresource prefix="Icons">
+    <file>Assets/icons/icons8-data-mapping-96.png</file>
+    <file>Assets/icons/icons8-add-96.png</file>
+    <file>Assets/icons/icons8-15-64 (1).png</file>
+    <file>Assets/icons/icons8-15-64.png</file>
+    <file>Assets/icons/icons8-about.svg</file>
+    <file>Assets/icons/icons8-bar-chart-96.png</file>
+    <file>Assets/icons/icons8-barcode-scanner-64.png</file>
+    <file>Assets/icons/icons8-business-64.png</file>
+    <file>Assets/icons/icons8-bypass-64.png</file>
+    <file>Assets/icons/icons8-check-mark-48.png</file>
+    <file>Assets/icons/icons8-circled-right-64.png</file>
+    <file>Assets/icons/icons8-connected-60.png</file>
+    <file>Assets/icons/icons8-connected-96.png</file>
+    <file>Assets/icons/icons8-cross-64.png</file>
+    <file>Assets/icons/icons8-cross-mark-48.png</file>
+    <file>Assets/icons/icons8-data-backup-50.png</file>
+    <file>Assets/icons/icons8-delete-200.png</file>
+    <file>Assets/icons/icons8-down-96.png</file>
+    <file>Assets/icons/icons8-exit-96.png</file>
+    <file>Assets/icons/icons8-export-96.png</file>
+    <file>Assets/icons/icons8-export-100.png</file>
+    <file>Assets/icons/icons8-flashcards-80.png</file>
+    <file>Assets/icons/icons8-forward-100.png</file>
+    <file>Assets/icons/icons8-go-back-64.png</file>
+    <file>Assets/icons/icons8-home-96.png</file>
+    <file>Assets/icons/icons8-inspection-64 (copy 1).png</file>
+    <file>Assets/icons/icons8-inspection-64.png</file>
+    <file>Assets/icons/icons8-inspection-96.png</file>
+    <file>Assets/icons/icons8-left-96.png</file>
+    <file>Assets/icons/icons8-menu-100.png</file>
+    <file>Assets/icons/icons8-model-64.png</file>
+    <file>Assets/icons/icons8-motion-100.png</file>
+    <file>Assets/icons/icons8-ok-48.png</file>
+    <file>Assets/icons/icons8-play-64.png</file>
+    <file>Assets/icons/icons8-plc-96.png</file>
+    <file>Assets/icons/icons8-preview-48.png</file>
+    <file>Assets/icons/icons8-programs-64.png</file>
+    <file>Assets/icons/icons8-refresh-96.png</file>
+    <file>Assets/icons/icons8-return-96.png</file>
+    <file>Assets/icons/icons8-right-96.png</file>
+    <file>Assets/icons/icons8-rtg-crane-96.png</file>
+    <file>Assets/icons/icons8-save-96.png</file>
+    <file>Assets/icons/icons8-search-48.png</file>
+    <file>Assets/icons/icons8-search-data-66.png</file>
+    <file>Assets/icons/icons8-settings-96 (copy 1).png</file>
+    <file>Assets/icons/icons8-settings-96.png</file>
+    <file>Assets/icons/icons8-up-96.png</file>
+    <file>Assets/icons/icons8-view-50.png</file>
+    <file>Assets/icons/icons8-view-94.png</file>
+    <file>Assets/icons/icons8-waiting-48.png</file>
+  </qresource>
+  <qresource prefix="Logo">
+    <file>Assets/Logos/mahle.png</file>
+    <file>Assets/Logos/VR Logo.png</file>
+  </qresource>
+</RCC>

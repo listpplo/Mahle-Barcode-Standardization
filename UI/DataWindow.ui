@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Data_Win</class>
+ <widget class="QWidget" name="Data_Win">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>View Data Window</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">QTabBar::tab {
+    padding: 5px;
+	font: 700 12pt &quot;Cascadia Code&quot;;
+	background-color: rgb(255, 255, 255);
+} 
+
+QTabBar::tab:selected { 
+	background-color:rgb(71, 255, 108);
+    margin-bottom: -1px; 
+}
+</string>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::East</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="icon">
+       <iconset resource="asset.qrc">
+        <normaloff>:/Icons/Assets/icons/icons8-bar-chart-96.png</normaloff>:/Icons/Assets/icons/icons8-bar-chart-96.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>View</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item alignment="Qt::AlignTop">
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="leftMargin">
+           <number>5</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>5</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	font: 700 14pt &quot;Cascadia Code&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>Start Date :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateEdit">
+            <property name="styleSheet">
+             <string notr="true">QDateEdit{
+	border:2px solid black;
+	color: rgb(0, 0, 0);
+	border-radius:10px;
+	padding-left:5px;
+	height:30px;
+	
+	font: 600 12pt &quot;Cascadia Code SemiBold&quot;;
+	background-color: rgb(0, 255, 255);
+}
+QDateEdit::drop-down{
+	image: url(:/Icons/Assets/icons/icons8-business-64.png);
+	height:20px;
+	width:20px;
+	padding:2.5px;
+}
+QCalendarWidget QToolButton{
+	
+	color: rgb(0, 0, 0);
+	icon-size: 20px;
+	padding-bottom:10px;
+}
+</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	font: 700 14pt &quot;Cascadia Code&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>End Date :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateEdit_2">
+            <property name="styleSheet">
+             <string notr="true">QDateEdit{
+	border:2px solid black;
+	color: rgb(0, 0, 0);
+	border-radius:10px;
+	padding-left:20px;
+	height:30px;
+	
+	font: 600 12pt &quot;Cascadia Code SemiBold&quot;;
+	background-color: rgb(0, 255, 255);
+}
+QDateEdit::drop-down{
+	image: url(:/Icons/Assets/icons/icons8-business-64.png);
+	height:20px;
+	width:20px;
+	padding:2.5px;
+}
+QCalendarWidget QToolButton{
+	
+	color: rgb(0, 0, 0);
+	icon-size: 20px;
+	padding-bottom:10px;
+}
+</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	border-radius:20px;
+	border:2px dashed black;
+	height:30px;
+	width:120px;
+	background-color: rgb(39, 255, 111);
+	
+	font: 600 12pt &quot;Cascadia Mono SemiBold&quot;;
+}
+QPushButton::hover{
+	background-color: rgb(239, 255, 64);
+}</string>
+            </property>
+            <property name="text">
+             <string>Fetch</string>
+            </property>
+            <property name="icon">
+             <iconset resource="asset.qrc">
+              <normaloff>:/Icons/Assets/icons/icons8-search-48.png</normaloff>:/Icons/Assets/icons/icons8-search-48.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	border-radius:20px;
+	border:2px dashed black;
+	height:30px;
+	width:120px;
+	background-color: rgb(39, 255, 111);
+	
+	font: 600 12pt &quot;Cascadia Mono SemiBold&quot;;
+}
+QPushButton::hover{
+	background-color: rgb(239, 255, 64);
+}</string>
+            </property>
+            <property name="text">
+             <string>Export</string>
+            </property>
+            <property name="icon">
+             <iconset resource="asset.qrc">
+              <normaloff>:/Icons/Assets/icons/icons8-menu-100.png</normaloff>:/Icons/Assets/icons/icons8-menu-100.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="DataFrameTable" name="tableWidget_2">
+            <property name="styleSheet">
+             <string notr="true">QTableWidget{
+	font: 600 12pt &quot;Cascadia Mono SemiBold&quot;;
+}</string>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Page</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DataFrameTable</class>
+   <extends>QTableWidget</extends>
+   <header location="global">dataframetable.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="asset.qrc"/>
+ </resources>
+ <connections/>
+</ui>

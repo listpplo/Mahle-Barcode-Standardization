@@ -1,0 +1,4531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SubWindow</class>
+ <widget class="QWidget" name="SubWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>610</width>
+    <height>502</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sub Recipe Window</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	font: 700 16pt &quot;Cascadia Mono&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Recipe Editor</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>5</number>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>QR Code Argument</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="8" column="3">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Arg 14</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Arg 7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Arg 10</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Arg 11</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Arg 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Arg 1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Arg 13</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QLineEdit" name="QR_arg5_value"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Arg 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Arg 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="QR_arg3_value"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="QR_arg4_value"/>
+          </item>
+          <item row="10" column="3">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Arg 16</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="QR_arg1_value"/>
+          </item>
+          <item row="8" column="2">
+           <widget class="QLineEdit" name="QR_arg6_value"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Arg 6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QLineEdit" name="QR_arg8_value"/>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Arg 8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Arg 12</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="3">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Arg 15</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Arg 9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Arg 4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QLineEdit" name="QR_arg7_value"/>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="QR_arg2_value"/>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="QR_arg9_value"/>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLineEdit" name="QR_arg10_value"/>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLineEdit" name="QR_arg11_value"/>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="QR_arg12_value"/>
+          </item>
+          <item row="7" column="5">
+           <widget class="QLineEdit" name="QR_arg13_value"/>
+          </item>
+          <item row="8" column="5">
+           <widget class="QLineEdit" name="QR_arg14_value"/>
+          </item>
+          <item row="9" column="5">
+           <widget class="QLineEdit" name="QR_arg15_value"/>
+          </item>
+          <item row="10" column="5">
+           <widget class="QLineEdit" name="QR_arg16_value"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QComboBox" name="QR_arg9">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QComboBox" name="QR_arg10">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QComboBox" name="QR_arg11">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QComboBox" name="QR_arg12">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <widget class="QComboBox" name="QR_arg13">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QComboBox" name="QR_arg14">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="QR_arg15">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QComboBox" name="QR_arg16">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="QR_arg2">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="QR_arg1">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="QR_arg3">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="QR_arg4">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QComboBox" name="QR_arg5">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QComboBox" name="QR_arg6">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="QR_arg7">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QComboBox" name="QR_arg8">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shift</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_15">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label_148">
+            <property name="text">
+             <string>Generated Data :</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label_149">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignBottom">
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string>Reload</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>Generate Data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Label 1 Argument</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QCheckBox" name="checkBox_2">
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="8" column="3">
+           <widget class="QLabel" name="label_82">
+            <property name="text">
+             <string>Arg 14</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_83">
+            <property name="text">
+             <string>Arg 7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="label_84">
+            <property name="text">
+             <string>Arg 10</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QLabel" name="label_85">
+            <property name="text">
+             <string>Arg 11</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_86">
+            <property name="text">
+             <string>Arg 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_87">
+            <property name="text">
+             <string>Arg 1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QLabel" name="label_88">
+            <property name="text">
+             <string>Arg 13</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QLineEdit" name="Label1_arg5_value"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_89">
+            <property name="text">
+             <string>Arg 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_90">
+            <property name="text">
+             <string>Arg 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="Label1_arg3_value"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="Label1_arg4_value"/>
+          </item>
+          <item row="10" column="3">
+           <widget class="QLabel" name="label_91">
+            <property name="text">
+             <string>Arg 16</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="Label1_arg1_value"/>
+          </item>
+          <item row="8" column="2">
+           <widget class="QLineEdit" name="Label1_arg6_value"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_92">
+            <property name="text">
+             <string>Arg 6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QLineEdit" name="Label1_arg8_value"/>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_93">
+            <property name="text">
+             <string>Arg 8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QLabel" name="label_94">
+            <property name="text">
+             <string>Arg 12</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="3">
+           <widget class="QLabel" name="label_95">
+            <property name="text">
+             <string>Arg 15</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_96">
+            <property name="text">
+             <string>Arg 9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_97">
+            <property name="text">
+             <string>Arg 4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QLineEdit" name="Label1_arg7_value"/>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="Label1_arg2_value"/>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="Label1_arg9_value"/>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLineEdit" name="Label1_arg10_value"/>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLineEdit" name="Label1_arg11_value"/>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="Label1_arg12_value"/>
+          </item>
+          <item row="7" column="5">
+           <widget class="QLineEdit" name="Label1_arg13_value"/>
+          </item>
+          <item row="8" column="5">
+           <widget class="QLineEdit" name="Label1_arg14_value"/>
+          </item>
+          <item row="9" column="5">
+           <widget class="QLineEdit" name="Label1_arg15_value"/>
+          </item>
+          <item row="10" column="5">
+           <widget class="QLineEdit" name="Label1_arg16_value"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QComboBox" name="Label1_arg9">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QComboBox" name="Label1_arg10">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QComboBox" name="Label1_arg11">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QComboBox" name="Label1_arg12">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <widget class="QComboBox" name="Label1_arg13">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QComboBox" name="Label1_arg14">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="Label1_arg15">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QComboBox" name="Label1_arg16">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="Label1_arg2">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="Label1_arg1">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="Label1_arg3">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="Label1_arg4">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QComboBox" name="Label1_arg5">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QComboBox" name="Label1_arg6">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="Label1_arg7">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QComboBox" name="Label1_arg8">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_16">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label_150">
+            <property name="text">
+             <string>Generated Data :</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label_151">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="pushButton_16">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="text">
+             <string>Reload</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="text">
+             <string>Generate Data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Label 2 Argument</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QCheckBox" name="checkBox_3">
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="8" column="3">
+           <widget class="QLabel" name="label_98">
+            <property name="text">
+             <string>Arg 14</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_99">
+            <property name="text">
+             <string>Arg 7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="label_100">
+            <property name="text">
+             <string>Arg 10</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QLabel" name="label_101">
+            <property name="text">
+             <string>Arg 11</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_102">
+            <property name="text">
+             <string>Arg 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_103">
+            <property name="text">
+             <string>Arg 1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QLabel" name="label_104">
+            <property name="text">
+             <string>Arg 13</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QLineEdit" name="Label2_arg5_value"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_105">
+            <property name="text">
+             <string>Arg 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_106">
+            <property name="text">
+             <string>Arg 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="Label2_arg3_value"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="Label2_arg4_value"/>
+          </item>
+          <item row="10" column="3">
+           <widget class="QLabel" name="label_107">
+            <property name="text">
+             <string>Arg 16</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="Label2_arg1_value"/>
+          </item>
+          <item row="8" column="2">
+           <widget class="QLineEdit" name="Label2_arg6_value"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_108">
+            <property name="text">
+             <string>Arg 6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QLineEdit" name="Label2_arg8_value"/>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_109">
+            <property name="text">
+             <string>Arg 8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QLabel" name="label_110">
+            <property name="text">
+             <string>Arg 12</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="3">
+           <widget class="QLabel" name="label_111">
+            <property name="text">
+             <string>Arg 15</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_112">
+            <property name="text">
+             <string>Arg 9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_113">
+            <property name="text">
+             <string>Arg 4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QLineEdit" name="Label2_arg7_value"/>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="Label2_arg2_value"/>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="Label2_arg9_value"/>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLineEdit" name="Label2_arg10_value"/>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLineEdit" name="Label2_arg11_value"/>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="Label2_arg12_value"/>
+          </item>
+          <item row="7" column="5">
+           <widget class="QLineEdit" name="Label2_arg13_value"/>
+          </item>
+          <item row="8" column="5">
+           <widget class="QLineEdit" name="Label2_arg14_value"/>
+          </item>
+          <item row="9" column="5">
+           <widget class="QLineEdit" name="Label2_arg15_value"/>
+          </item>
+          <item row="10" column="5">
+           <widget class="QLineEdit" name="Label2_arg16_value"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QComboBox" name="Label2_arg9">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QComboBox" name="Label2_arg10">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QComboBox" name="Label2_arg11">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QComboBox" name="Label2_arg12">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <widget class="QComboBox" name="Label2_arg13">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QComboBox" name="Label2_arg14">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="Label2_arg15">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QComboBox" name="Label2_arg16">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="Label2_arg2">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="Label2_arg1">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="Label2_arg3">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="Label2_arg4">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QComboBox" name="Label2_arg5">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QComboBox" name="Label2_arg6">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="Label2_arg7">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QComboBox" name="Label2_arg8">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_17">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label_152">
+            <property name="text">
+             <string>Generated Data :</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label_153">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_5">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="pushButton_19">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_20">
+            <property name="text">
+             <string>Reload</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_21">
+            <property name="text">
+             <string>Generate Data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Label 3 Argument</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QCheckBox" name="checkBox_4">
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_8">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="8" column="3">
+           <widget class="QLabel" name="label_114">
+            <property name="text">
+             <string>Arg 14</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_115">
+            <property name="text">
+             <string>Arg 7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="label_116">
+            <property name="text">
+             <string>Arg 10</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QLabel" name="label_117">
+            <property name="text">
+             <string>Arg 11</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_118">
+            <property name="text">
+             <string>Arg 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_119">
+            <property name="text">
+             <string>Arg 1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QLabel" name="label_120">
+            <property name="text">
+             <string>Arg 13</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QLineEdit" name="Label3_arg5_value"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_121">
+            <property name="text">
+             <string>Arg 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_122">
+            <property name="text">
+             <string>Arg 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="Label3_arg3_value"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="Label3_arg4_value"/>
+          </item>
+          <item row="10" column="3">
+           <widget class="QLabel" name="label_123">
+            <property name="text">
+             <string>Arg 16</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="Label3_arg1_value"/>
+          </item>
+          <item row="8" column="2">
+           <widget class="QLineEdit" name="Label3_arg6_value"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_124">
+            <property name="text">
+             <string>Arg 6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QLineEdit" name="Label3_arg8_value"/>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_125">
+            <property name="text">
+             <string>Arg 8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QLabel" name="label_126">
+            <property name="text">
+             <string>Arg 12</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="3">
+           <widget class="QLabel" name="label_127">
+            <property name="text">
+             <string>Arg 15</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_128">
+            <property name="text">
+             <string>Arg 9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_129">
+            <property name="text">
+             <string>Arg 4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QLineEdit" name="Label3_arg7_value"/>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="Label3_arg2_value"/>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="Label3_arg9_value"/>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLineEdit" name="Label3_arg10_value"/>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLineEdit" name="Label3_arg11_value"/>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="Label3_arg12_value"/>
+          </item>
+          <item row="7" column="5">
+           <widget class="QLineEdit" name="Label3_arg13_value"/>
+          </item>
+          <item row="8" column="5">
+           <widget class="QLineEdit" name="Label3_arg14_value"/>
+          </item>
+          <item row="9" column="5">
+           <widget class="QLineEdit" name="Label3_arg15_value"/>
+          </item>
+          <item row="10" column="5">
+           <widget class="QLineEdit" name="Label3_arg16_value"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QComboBox" name="Label3_arg9">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QComboBox" name="Label3_arg10">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QComboBox" name="Label3_arg11">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QComboBox" name="Label3_arg12">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <widget class="QComboBox" name="Label3_arg13">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QComboBox" name="Label3_arg14">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="Label3_arg15">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QComboBox" name="Label3_arg16">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="Label3_arg2">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="Label3_arg1">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="Label3_arg3">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="Label3_arg4">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QComboBox" name="Label3_arg5">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QComboBox" name="Label3_arg6">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="Label3_arg7">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QComboBox" name="Label3_arg8">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_18">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label_154">
+            <property name="text">
+             <string>Generated Data :</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label_155">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_7">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="pushButton_22">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_24">
+            <property name="text">
+             <string>Reload</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_23">
+            <property name="text">
+             <string>Generate Data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Label 4 Argument</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QCheckBox" name="checkBox_5">
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_10">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="8" column="3">
+           <widget class="QLabel" name="label_130">
+            <property name="text">
+             <string>Arg 14</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_131">
+            <property name="text">
+             <string>Arg 7</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="label_132">
+            <property name="text">
+             <string>Arg 10</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QLabel" name="label_133">
+            <property name="text">
+             <string>Arg 11</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_134">
+            <property name="text">
+             <string>Arg 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_135">
+            <property name="text">
+             <string>Arg 1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QLabel" name="label_136">
+            <property name="text">
+             <string>Arg 13</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QLineEdit" name="Label4_arg5_value"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_137">
+            <property name="text">
+             <string>Arg 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_138">
+            <property name="text">
+             <string>Arg 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="Label4_arg3_value"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="Label4_arg4_value"/>
+          </item>
+          <item row="10" column="3">
+           <widget class="QLabel" name="label_139">
+            <property name="text">
+             <string>Arg 16</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="Label4_arg1_value"/>
+          </item>
+          <item row="8" column="2">
+           <widget class="QLineEdit" name="Label4_arg6_value"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_140">
+            <property name="text">
+             <string>Arg 6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QLineEdit" name="Label4_arg8_value"/>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_141">
+            <property name="text">
+             <string>Arg 8</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QLabel" name="label_142">
+            <property name="text">
+             <string>Arg 12</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="3">
+           <widget class="QLabel" name="label_143">
+            <property name="text">
+             <string>Arg 15</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_144">
+            <property name="text">
+             <string>Arg 9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_145">
+            <property name="text">
+             <string>Arg 4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QLineEdit" name="Label4_arg7_value"/>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="Label4_arg2_value"/>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="Label4_arg9_value"/>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLineEdit" name="Label4_arg10_value"/>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLineEdit" name="Label4_arg11_value"/>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="Label4_arg12_value"/>
+          </item>
+          <item row="7" column="5">
+           <widget class="QLineEdit" name="Label4_arg13_value"/>
+          </item>
+          <item row="8" column="5">
+           <widget class="QLineEdit" name="Label4_arg14_value"/>
+          </item>
+          <item row="9" column="5">
+           <widget class="QLineEdit" name="Label4_arg15_value"/>
+          </item>
+          <item row="10" column="5">
+           <widget class="QLineEdit" name="Label4_arg16_value"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QComboBox" name="Label4_arg9">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QComboBox" name="Label4_arg10">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QComboBox" name="Label4_arg11">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QComboBox" name="Label4_arg12">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <widget class="QComboBox" name="Label4_arg13">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QComboBox" name="Label4_arg14">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="Label4_arg15">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QComboBox" name="Label4_arg16">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="Label4_arg2">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="Label4_arg1">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="Label4_arg3">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="Label4_arg4">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QComboBox" name="Label4_arg5">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QComboBox" name="Label4_arg6">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="Label4_arg7">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QComboBox" name="Label4_arg8">
+            <item>
+             <property name="text">
+              <string>---</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Date (Enter Date Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Time (Enter Time Formate)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Custom Text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Serial No.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_19">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="label_156">
+            <property name="text">
+             <string>Generated Data :</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label_157">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_9">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QPushButton" name="pushButton_25">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_26">
+            <property name="text">
+             <string>Reload</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_27">
+            <property name="text">
+             <string>Generate Data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Generation Code</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_13">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Label 1</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_27">
+               <property name="text">
+                <string>Size:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_29">
+               <property name="text">
+                <string>Top Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_30">
+               <property name="text">
+                <string>Left Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_28">
+               <property name="text">
+                <string>weight :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="comboBox">
+               <item>
+                <property name="text">
+                 <string>normal</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bold</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bolder</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_14"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>Page Layout</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_19">
+               <property name="text">
+                <string>Height :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_20">
+               <property name="text">
+                <string>Width :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>Top Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>Left Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_6"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_7"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_9"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>Label 2</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_5">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_35">
+               <property name="text">
+                <string>Size :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_36">
+               <property name="text">
+                <string>Weight :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="comboBox_2">
+               <item>
+                <property name="text">
+                 <string>normal</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bold</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bolder</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_37">
+               <property name="text">
+                <string>Top Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_16"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_38">
+               <property name="text">
+                <string>Left Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_17"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QGroupBox" name="groupBox_6">
+            <property name="title">
+             <string>Label 4</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_7">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_43">
+               <property name="text">
+                <string>Size :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_44">
+               <property name="text">
+                <string>Width :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_45">
+               <property name="text">
+                <string>Top Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_46">
+               <property name="text">
+                <string>Left Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="comboBox_4">
+               <item>
+                <property name="text">
+                 <string>normal</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bold</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bolder</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_5"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_20"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_21"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="title">
+             <string>Label 3</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_6">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_39">
+               <property name="text">
+                <string>Size :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_40">
+               <property name="text">
+                <string>Weight :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="comboBox_3">
+               <item>
+                <property name="text">
+                 <string>normal</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bold</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>bolder</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_41">
+               <property name="text">
+                <string>Top Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_19"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_42">
+               <property name="text">
+                <string>Left Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_18"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string>Barcode Parameter</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_23">
+               <property name="text">
+                <string>Height :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_10"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_25">
+               <property name="text">
+                <string>Top Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_12"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_26">
+               <property name="text">
+                <string>Left Space :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_13"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_24">
+               <property name="text">
+                <string>Width :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_11"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QFrame" name="frame_20">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>Serial No.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox">
+            <property name="maximum">
+             <number>30000</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>Print Count:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_2">
+            <property name="maximum">
+             <number>30000</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignBottom">
+        <widget class="QFrame" name="frame_14">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QPushButton" name="pushButton_28">
+            <property name="text">
+             <string>Save </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_29">
+            <property name="text">
+             <string>Reload</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_30">
+            <property name="text">
+             <string>Test Print</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

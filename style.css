@@ -1,0 +1,46 @@
+@page {
+    width: 20mm;
+    height: 25mm;
+    padding-left: 3mm;
+    padding-top : 5mm;
+}
+
+img {
+    height: 9.5mm;
+    image-rendering: pixelated;
+    padding-left:3mm;
+}
+
+.label {
+    font-family: Calibri;
+    font-weight: normal;
+    font-size: 2.3mm;
+    padding-left:1mm;
+}
+
+.label_1 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 1.8mm;
+    padding-left:8mm;
+}
+
+.label_2 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 1.8mm;
+    padding-left:4mm;
+}
+.label_3 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 1.8mm;
+    padding-left:8mm;
+}
+
+.label_4 {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 1.8mm;
+    padding-left:8mm;
+}

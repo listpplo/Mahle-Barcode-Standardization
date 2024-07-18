@@ -1,0 +1,9 @@
+data1: D100
+data2: D101
+data3: D102
+data4: D103
+data5: D2000
+data6: D2200
+heartBeat: M7340
+plcTimeOut: '5'
+scanTime: '1'
