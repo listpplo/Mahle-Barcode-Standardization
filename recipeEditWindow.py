@@ -82,13 +82,7 @@ class RecipeSubWindow(Ui_SubWindow, QWidget):
                 data = yaml.load(file, Loader=yaml.SafeLoader)
             
             self.loadLabelSpec(data)
-
-            # with open(f"Recipes/{name[0]}/{name[1]}/{self.fileList[5]}") as file:
-            #     self.textEdit.setPlainText(file.read())
-            #
-            # with open(f"Recipes/{name[0]}/{name[1]}/{self.fileList[6]}") as file:
-            #     self.textEdit_2.setPlainText(file.read())
-
+            
         except Exception as e:
             print("Error at loading ", e)
 

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>514</height>
+    <width>548</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabWidgetPage1">
       <attribute name="title">
@@ -243,6 +243,13 @@ QPushButton::hover{
        <string>Data Reg. Setting</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="18" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Scan Time (s) :</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="2">
         <widget class="QLineEdit" name="lineEdit_5">
          <property name="alignment">
@@ -253,74 +260,50 @@ QPushButton::hover{
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_9">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>PLC Comamnd ST-02 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_20">
-         <property name="text">
-          <string>Response Reg. ST-02 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="1">
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="styleSheet">
-          <string notr="true">QPushButton::hover{
-	background-color: rgb(71, 255, 20);
-}
-
-QPushButton::checked{
-	background-color: rgb(71, 255, 20);
-}</string>
-         </property>
-         <property name="text">
-          <string>Monitor</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1">
-        <widget class="QLineEdit" name="lineEdit_8">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0">
+       <item row="19" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
           <string>PLC Timeout (s) : </string>
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QLineEdit" name="lineEdit_16">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+       <item row="7" column="1">
+        <widget class="Line" name="line">
+         <property name="styleSheet">
+          <string notr="true">Line{
+	border:2px dashed black;
+}</string>
          </property>
-         <property name="readOnly">
-          <bool>true</bool>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Barcode ST-01 :</string>
          </property>
         </widget>
        </item>
        <item row="6" column="0">
-        <widget class="QLabel" name="label_19">
+        <widget class="QLabel" name="label_21">
          <property name="text">
-          <string>Serial No. ST-02 :</string>
+          <string>Response Reg. ST-01 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="lineEdit_11">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Response Reg. ST-02 :</string>
          </property>
         </widget>
        </item>
@@ -334,14 +317,7 @@ QPushButton::checked{
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Print Count ST-02 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="1">
+       <item row="21" column="1">
         <widget class="QPushButton" name="pushButton_6">
          <property name="styleSheet">
           <string notr="true">QPushButton::hover{
@@ -360,95 +336,17 @@ QPushButton::checked{
          </property>
         </widget>
        </item>
-       <item row="9" column="2">
-        <widget class="QLineEdit" name="lineEdit_17">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Serial No. ST-01 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="2">
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="styleSheet">
-          <string notr="true">QPushButton::hover{
-	background-color: rgb(71, 255, 20);
-}
-</string>
-         </property>
-         <property name="text">
-          <string>Save</string>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QLineEdit" name="lineEdit_13">
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="lineEdit_23">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Barcode St-02 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QLineEdit" name="lineEdit_15">
+       <item row="18" column="1">
+        <widget class="QLineEdit" name="lineEdit_7">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Print Count ST-01 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QLineEdit" name="lineEdit_21">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_4">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_18">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Heart Beat Server :</string>
          </property>
         </widget>
        </item>
@@ -459,7 +357,57 @@ QPushButton::checked{
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_14">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Print Count ST-02 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QLineEdit" name="lineEdit_20">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_4">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="2">
+        <widget class="Line" name="line_5">
+         <property name="styleSheet">
+          <string notr="true">Line{
+	border:2px dashed black;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="lineEdit_25">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
         <widget class="QLineEdit" name="lineEdit_19">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -469,21 +417,29 @@ QPushButton::checked{
          </property>
         </widget>
        </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Scan Time (s) :</string>
+       <item row="16" column="1">
+        <widget class="Line" name="line_4">
+         <property name="styleSheet">
+          <string notr="true">Line{
+	border:2px dashed black;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>Barcode St-01 :</string>
+       <item row="15" column="2">
+        <widget class="QLineEdit" name="lineEdit_17">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="13" column="2">
+       <item row="20" column="2">
         <widget class="QPushButton" name="pushButton_5">
          <property name="styleSheet">
           <string notr="true">QPushButton::hover{
@@ -499,20 +455,127 @@ QPushButton::checked{
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_11">
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Serial No. ST-01 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="1">
+        <widget class="QLineEdit" name="lineEdit_8">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
+       <item row="13" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Barcode ST-02 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="2">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="styleSheet">
+          <string notr="true">QPushButton::hover{
+	background-color: rgb(71, 255, 20);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Save</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="lineEdit_16">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QLineEdit" name="lineEdit_24">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
         <widget class="QLineEdit" name="lineEdit_12">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
          <property name="readOnly">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLineEdit" name="lineEdit_10">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="1">
+        <widget class="QLineEdit" name="lineEdit_15">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="lineEdit_9">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Heart Beat Server :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>PLC Comamnd ST-02 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="Line" name="line_6">
+         <property name="styleSheet">
+          <string notr="true">Line{
+	border:2px dashed black;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_18">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -523,70 +586,127 @@ QPushButton::checked{
          </property>
         </widget>
        </item>
-       <item row="8" column="1">
-        <widget class="QLineEdit" name="lineEdit_14">
+       <item row="17" column="1">
+        <widget class="QLineEdit" name="lineEdit_13">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Print Count ST-01 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_26">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="1">
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="styleSheet">
+          <string notr="true">QPushButton::hover{
+	background-color: rgb(71, 255, 20);
+}
+
+QPushButton::checked{
+	background-color: rgb(71, 255, 20);
+}</string>
+         </property>
+         <property name="text">
+          <string>Monitor</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Serial No. ST-02 :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="lineEdit_27">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="Line" name="line_3">
+         <property name="styleSheet">
+          <string notr="true">Line{
+	border:2px dashed black;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Print Recipe ST-01:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
         <widget class="QLineEdit" name="lineEdit_22">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="11" column="1">
-        <widget class="QLineEdit" name="lineEdit_7">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLineEdit" name="lineEdit_20">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLineEdit" name="lineEdit_10">
+       <item row="11" column="2">
+        <widget class="QLineEdit" name="lineEdit_21">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
          <property name="readOnly">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_21">
-         <property name="text">
-          <string>Response Reg. ST-01 :</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_23">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
        <item row="7" column="2">
-        <widget class="QLineEdit" name="lineEdit_24">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+        <widget class="Line" name="line_2">
+         <property name="styleSheet">
+          <string notr="true">Line{
+	border:2px dashed black;
+}</string>
          </property>
-         <property name="readOnly">
-          <bool>true</bool>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QLineEdit" name="lineEdit_25">
+       <item row="10" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>Print Recipe ST-02:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QLineEdit" name="lineEdit_28">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLineEdit" name="lineEdit_29">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -935,12 +1055,12 @@ QPushButton::hover{
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>471</x>
-     <y>382</y>
+     <x>528</x>
+     <y>460</y>
     </hint>
     <hint type="destinationlabel">
-     <x>284</x>
-     <y>382</y>
+     <x>333</x>
+     <y>460</y>
     </hint>
    </hints>
   </connection>
@@ -951,8 +1071,8 @@ QPushButton::hover{
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>284</x>
-     <y>412</y>
+     <x>333</x>
+     <y>490</y>
     </hint>
     <hint type="destinationlabel">
      <x>6</x>

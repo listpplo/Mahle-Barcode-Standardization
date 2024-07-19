@@ -24,6 +24,7 @@ from Decoder import Decoder
 from blabel import LabelWriter
 import sqlite3
 import pandas as pd
+from PLC_data import PLC
 
 
 class Mapping(Ui_PLCMapping, QWidget):
@@ -38,26 +39,58 @@ class Mapping(Ui_PLCMapping, QWidget):
 
         # Configuring actions
         self.pushButton.clicked.connect(self.addData)
+        self.pushButton_4.clicked.connect(self.deleteLast)
+        self.pushButton_2.clicked.connect(self.saveMappingData)
 
     def addData(self):
         row_count = self.tableWidget.rowCount()
         self.tableWidget.setRowCount(row_count + 1)
 
         # generating number for mapping
-        item = QTableWidgetItem(f"{row_count+1}")
+        item = QTableWidgetItem(f"{row_count + 1}")
         item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
         self.tableWidget.setItem(row_count, 0, item)
 
         fileNameSelection = QComboBox()
         fileNameSelection.addItems(self.fileLst)
-        item2 = QTableWidgetItem(fileNameSelection)
-        item2.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.tableWidget.setItem(row_count, 1, item2)
+        self.tableWidget.setCellWidget(row_count, 1, fileNameSelection)
+
+    def deleteLast(self):
+        self.tableWidget.setRowCount(self.tableWidget.rowCount() - 1)
+
+    def saveMappingData(self):
+        data = {}
+        for i in range(self.tableWidget.rowCount()):
+            index = self.tableWidget.item(i, 0).text()
+            name = self.tableWidget.cellWidget(i, 1).currentText()
+            data[index] = name
+
+        try:
+            with open(f"Config/Mapping-{self.StName}.yaml", "w+") as file:
+                yaml.dump(data, file, Dumper=yaml.SafeDumper)
+            self.popup.whenCall(heading="Success !!!", mesg="Data Saved Successful !!")
+        except Exception as e:
+            print(e)
+            self.popup.whenCall(heading="Error !!!", mesg=f"Unable To Save Data \n Reason-{e}")
 
     def showEvent(self, event):
         try:
             with open(f"Config/Mapping-{self.StName}.yaml") as file:
                 data = yaml.load(file, Loader=yaml.SafeLoader)
+
+            # Settings up row count
+            self.tableWidget.setRowCount(len(data.keys()))
+
+            i = 0
+            for key in data:
+                item = QTableWidgetItem(f"{key}")
+                item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+                self.tableWidget.setItem(i, 0, item)
+                selectionBox = QComboBox()
+                selectionBox.addItems([data[key], *self.fileLst])
+                self.tableWidget.setCellWidget(i, 1, selectionBox)
+                i += 1
+
         except Exception as e:
             print(e)
 
@@ -76,13 +109,29 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
         self.pushButton_8.clicked.connect(self.testPlcConn)
         self.pushButton_3.clicked.connect(lambda _: threading.Thread(target=self.monitorPLCData).start())
         self.pushButton_4.clicked.connect(self.saveConfig)
-        self.pushButton_9.clicked.connect(self.savePrinterSetting)
+        self.pushButton_10.clicked.connect(self.savePrinterSetting)
         self.pushButton_12.clicked.connect(self.saveShiftSettings)
         self.monitorSignal.connect(self.runCommand)
         self.tabWidget.setCurrentIndex(0)
+        self.keys = {"command_st01": self.lineEdit_3,
+                     "printCount_st01": self.lineEdit_4,
+                     "printRecipe_st01": self.lineEdit_26,
+                     "serialNo_st01": self.lineEdit_18,
+                     "barcode_st01": self.lineEdit_14,
+                     "respReg_st01": self.lineEdit_23,
+                     "command_st02": self.lineEdit_9,
+                     "printCount_st02": self.lineEdit_11,
+                     "printRecipe_st02": self.lineEdit_28,
+                     "serialNo_st02": self.lineEdit_20,
+                     "barcode_st02": self.lineEdit_22,
+                     "respReg_st02": self.lineEdit_15,
+                     "heartBeat": self.lineEdit_13,
+                     "scanTime": self.lineEdit_7,
+                     "plcTimeOut": self.lineEdit_8,
+                     }
 
         # Settings up fixed size
-        self.setFixedSize(586, 465)
+        self.setFixedSize(551, 588)
 
     def savePLCData(self) -> None:
         try:
@@ -96,18 +145,41 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
             self.popup.whenCall(heading="Error", mesg=f"{e}")
 
     def saveConfig(self):
-        data1 = self.lineEdit_3.text()
-        data2 = self.lineEdit_4.text()
-        data3 = self.lineEdit_9.text()
-        data4 = self.lineEdit_11.text()
-        data5 = self.lineEdit_14.text()  # Barcode Data Station 1
-        data6 = self.lineEdit_15.text()  # Barcode Data Station 2
+        # For station 1
+        command_st01 = self.lineEdit_3.text()
+        printCount_st01 = self.lineEdit_4.text()
+        printRecipe_st01 = self.lineEdit_26.text()
+        serialNo_st01 = self.lineEdit_18.text()
+        barcode_st01 = self.lineEdit_14.text()
+        respReg_st01 = self.lineEdit_23.text()
+
+        # For station 2
+        command_st02 = self.lineEdit_9.text()
+        printCount_st02 = self.lineEdit_11.text()
+        printRecipe_st02 = self.lineEdit_28.text()
+        serialNo_st02 = self.lineEdit_20.text()
+        barcode_st02 = self.lineEdit_22.text()
+        respReg_st02 = self.lineEdit_15.text()
+
+        # For server
         heartBeat = self.lineEdit_13.text()
         scanTime = self.lineEdit_7.text()
         plcTimeOut = self.lineEdit_8.text()
-        data = {"data1": data1, "data2": data2, "data3": data3, "data4": data4, "data5": data5, "data6": data6,
+        data = {"command_st01": command_st01,
+                "printCount_st01": printCount_st01,
+                "printRecipe_st01": printRecipe_st01,
+                "serialNo_st01": serialNo_st01,
+                "barcode_st01": barcode_st01,
+                "respReg_st01": respReg_st01,
+                "command_st02": command_st02,
+                "printCount_st02": printCount_st02,
+                "printRecipe_st02": printRecipe_st02,
+                "serialNo_st02": serialNo_st02,
+                "barcode_st02": barcode_st02,
+                "respReg_st02": respReg_st02,
                 "heartBeat": heartBeat,
-                "scanTime": scanTime, "plcTimeOut": plcTimeOut}
+                "scanTime": scanTime,
+                "plcTimeOut": plcTimeOut}
         try:
             with open("Config/PLCDataReg.yaml", "w+") as file:
                 yaml.dump(data, file)
@@ -119,19 +191,34 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
 
     @Slot(str)
     def runCommand(self, command: str):
-        print(command)
         command_split = command.split(":")
         match command_split[0]:
-            case "data1":
-                self.lineEdit_5.setText(f"{command_split[1]}")
-            case "data2":
-                self.lineEdit_6.setText(f"{command_split[1]}")
-            case "data3":
-                self.lineEdit_10.setText(f"{command_split[1]}")
-            case "data4":
-                self.lineEdit_12.setText(f"{command_split[1]}")
+            case "command_st01":
+                self.lineEdit_5.setText(command_split[1])
+            case "printCount_st01":
+                self.lineEdit_6.setText(command_split[1])
+            case "serialNo_st01":
+                self.lineEdit_19.setText(command_split[1])
+            case "barcode_st01":
+                self.lineEdit_16.setText(command_split[1])
+            case "respReg_st01":
+                self.lineEdit_25.setText(command_split[1])
+            case "command_st02":
+                self.lineEdit_10.setText(command_split[1])
+            case "printCount_st02":
+                self.lineEdit_12.setText(command_split[1])
+            case "serialNo_st02":
+                self.lineEdit_21.setText(command_split[1])
+            case "barcode_st02":
+                self.lineEdit_24.setText(command_split[1])
+            case "respReg_st02":
+                self.lineEdit_17.setText(command_split[1])
+            case "printRecipe_st01":
+                self.lineEdit_27.setText(command_split[1])
+            case "printRecipe_st02":
+                self.lineEdit_29.setText(command_split[1])
             case "popup":
-                self.popup.whenCall(heading=f"{command_split[1]}", mesg=f"{command_split[2]}")
+                self.popup.whenCall("Error !!!", mesg=command_split[1])
 
     def getPrinters(self):
         command = 'powershell "Get-Printer | Select-Object Name"'
@@ -174,8 +261,9 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
         data = {"st_01_printer": st_01_printer, "st_02_printer": st_02_printer}
         try:
             with open("Config/PrinterData.yaml", "w+") as file:
-                yaml.dump(data, file)
-                self.popup.whenCall(heading="Success !!", mesg=f"Data Saved Successful")
+                yaml.dump(data, file, Dumper=yaml.SafeDumper)
+
+            self.popup.whenCall(heading="Success !!", mesg=f"Data Saved Successful")
 
         except Exception as e:
             print(e)
@@ -207,14 +295,12 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
 
         while self.pushButton_3.isChecked() and plc._is_connected:
             try:
-                data1 = plc.batch_read(ref_device=self.lineEdit_3.text(), read_size=1, data_type=DT.UWORD)[0].value
-                self.monitorSignal.emit(f"data1:{data1}")
-                data2 = plc.batch_read(ref_device=self.lineEdit_4.text(), read_size=1, data_type=DT.UWORD)[0].value
-                self.monitorSignal.emit(f"data2:{data2}")
-                data3 = plc.batch_read(ref_device=self.lineEdit_9.text(), read_size=1, data_type=DT.UWORD)[0].value
-                self.monitorSignal.emit(f"data3:{data3}")
-                data4 = plc.batch_read(ref_device=self.lineEdit_11.text(), read_size=1, data_type=DT.UWORD)[0].value
-                self.monitorSignal.emit(f"data4:{data4}")
+                try:
+                    for key in self.keys:
+                        data = plc.batch_read(ref_device=self.keys[key].text(), read_size=1, data_type=DT.UWORD)[0]
+                        self.monitorSignal.emit(f"{key}:{data}")
+                except Exception as e:
+                    print(e)
 
                 # delay for the scan time
                 time.sleep(float(self.lineEdit_8.text()))
@@ -243,17 +329,12 @@ class ConnWindow(Ui_ConnectionWindow, QWidget):
         try:
             # Loading the recipie data
             with open("Config/PLCDataReg.yaml", "r") as file:
-                data = yaml.load(file, Loader=yaml.SafeLoader)
+                data: dict = yaml.load(file, Loader=yaml.SafeLoader)
 
-            self.lineEdit_3.setText(f'{data["data1"]}')
-            self.lineEdit_4.setText(f'{data["data2"]}')
-            self.lineEdit_9.setText(f'{data["data3"]}')
-            self.lineEdit_11.setText(f'{data["data4"]}')
-            self.lineEdit_14.setText(f'{data["data5"]}')
-            self.lineEdit_15.setText(f'{data["data6"]}')
-            self.lineEdit_13.setText(f'{data["heartBeat"]}')
-            self.lineEdit_7.setText(f'{data["scanTime"]}')
-            self.lineEdit_8.setText(f'{data["plcTimeOut"]}')
+            for key, value in data.items():
+                self.keys[key].setText(value)
+
+
         except Exception as e:
             self.popup.whenCall(heading="Error !!", mesg=f"{e}")
 
@@ -471,33 +552,22 @@ class MyApp(QMainWindow, Ui_MainWindow):
         self.actionOpen_Recipie_Editor.triggered.connect(self.openRecipie)
         self.actionConnection_Settings.triggered.connect(self.openConnWindow)
         self.actionData.triggered.connect(self.showdata)
+        self.pushButton_2.clicked.connect(self.runPLC)
 
         self.recWindow = RecWindow()
         self.connectionWindow = ConnWindow()
         self.datawindow = ShowDataWindow()
+        
+        self.plc = PLC()
+        self.plc.start()
+        self.plc.logSignal.connect(self.commandHandler)
 
         # Creating popup window
         self.popup = popUpWindow()
         self.textEdit.log("Logs will show here...")
-        self.textEdit_2.log("Logs will show here...")
-
-        # Check PLC connection
-        self.host = ''
-        self.port = ''
-        self.reConnect = True
-
-        with open("Config\PLCDataReg.yaml", 'r') as file:
-            self.data_reg = yaml.load(file, Loader=yaml.SafeLoader)
-
-        # Show Printer Name
-        with open("Config/PrinterData.yaml", 'rb') as file:
-            printer_name = yaml.load(file, Loader=yaml.SafeLoader)
-            self.label_4.setText(printer_name["st_01_printer"])
-
-        self.serialNumber = 0
 
         self.fileList = ["barcode.yaml", "label1.yaml", "label2.yaml", "label3.yaml", "label4.yaml", "template.html",
-                         "style.css", "label_spec.yaml", "counter.yaml"]
+                         "style.css", "label_spec.yaml"]
         self.name = None
 
         # Setting Up database Connection 
@@ -509,14 +579,25 @@ class MyApp(QMainWindow, Ui_MainWindow):
 
     def openRecipie(self) -> None:
         self.recWindow.show()
+        self.plc.terminate()
 
     def openConnWindow(self) -> None:
         self.connectionWindow.show()
+        self.plc.terminate()
 
     def showdata(self):
         self.datawindow.show()
+    
+    def runPLC(self):
+        self.plc.start()
+    
+    @Slot(str)
+    def commandHandler(self, command:str):
+        self.textEdit.log(command)
+
 
     def closeEvent(self, event: QCloseEvent) -> None:
+        self.plc.terminate()
         self.destroy()
         return super().closeEvent(event)
 

@@ -53,6 +53,11 @@ class Ui_PLCMapping(object):
 
         self.horizontalLayout.addWidget(self.pushButton_2)
 
+        self.pushButton_4 = QPushButton(self.frame_2)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+
+        self.horizontalLayout.addWidget(self.pushButton_4)
+
         self.pushButton_3 = QPushButton(self.frame_2)
         self.pushButton_3.setObjectName(u"pushButton_3")
 
@@ -99,7 +104,8 @@ class Ui_PLCMapping(object):
     def retranslateUi(self, PLCMapping):
         PLCMapping.setWindowTitle(QCoreApplication.translate("PLCMapping", u"PLC Mapping", None))
         self.pushButton.setText(QCoreApplication.translate("PLCMapping", u"Add", None))
-        self.pushButton_2.setText(QCoreApplication.translate("PLCMapping", u"Reset", None))
+        self.pushButton_2.setText(QCoreApplication.translate("PLCMapping", u"Save", None))
+        self.pushButton_4.setText(QCoreApplication.translate("PLCMapping", u"Delete", None))
         self.pushButton_3.setText(QCoreApplication.translate("PLCMapping", u"Close", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("PLCMapping", u"Mapping Count", None));

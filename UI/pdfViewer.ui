@@ -30,13 +30,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QWebEngineView" name="webEngineView">
-     <property name="url">
-      <url>
-       <string>about:blank</string>
-      </url>
-     </property>
-    </widget>
+    <widget class="QWebEngineView" name="webEngineView"/>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">
