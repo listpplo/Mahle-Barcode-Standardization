@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1012</width>
     <height>500</height>
    </rect>
   </property>
@@ -95,6 +95,75 @@ QTabBar::tab:selected {
           <property name="bottomMargin">
            <number>5</number>
           </property>
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	font: 700 14pt &quot;Cascadia Code&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>Station:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox{
+	padding-left:50px;
+}</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	font: 700 14pt &quot;Cascadia Code&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>DataType:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_2">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>PrintData</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ScannedData</string>
+             </property>
+            </item>
+           </widget>
+          </item>
           <item>
            <widget class="QLabel" name="label_7">
             <property name="styleSheet">

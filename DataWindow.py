@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QDateEdit, QFrame,
-    QHBoxLayout, QHeaderView, QLabel, QPushButton,
-    QSizePolicy, QTabWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
+    QFrame, QHBoxLayout, QHeaderView, QLabel,
+    QPushButton, QSizePolicy, QTabWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 from dataframetable import DataFrameTable
 import asset_rc
@@ -27,7 +27,7 @@ class Ui_Data_Win(object):
     def setupUi(self, Data_Win):
         if not Data_Win.objectName():
             Data_Win.setObjectName(u"Data_Win")
-        Data_Win.resize(800, 500)
+        Data_Win.resize(1012, 500)
         Data_Win.setMinimumSize(QSize(500, 300))
         self.verticalLayout = QVBoxLayout(Data_Win)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -60,6 +60,44 @@ class Ui_Data_Win(object):
         self.horizontalLayout_4.setSpacing(5)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(5, 5, 5, 5)
+        self.label_9 = QLabel(self.frame_3)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setStyleSheet(u"QLabel{\n"
+"	font: 700 14pt \"Cascadia Code\";\n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.label_9)
+
+        self.comboBox = QComboBox(self.frame_3)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        font = QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        self.comboBox.setFont(font)
+        self.comboBox.setStyleSheet(u"QComboBox{\n"
+"	padding-left:50px;\n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.comboBox)
+
+        self.label_10 = QLabel(self.frame_3)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setStyleSheet(u"QLabel{\n"
+"	font: 700 14pt \"Cascadia Code\";\n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.label_10)
+
+        self.comboBox_2 = QComboBox(self.frame_3)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboBox_2.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.comboBox_2)
+
         self.label_7 = QLabel(self.frame_3)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setStyleSheet(u"QLabel{\n"
@@ -227,6 +265,14 @@ class Ui_Data_Win(object):
 
     def retranslateUi(self, Data_Win):
         Data_Win.setWindowTitle(QCoreApplication.translate("Data_Win", u"View Data Window", None))
+        self.label_9.setText(QCoreApplication.translate("Data_Win", u"Station:", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("Data_Win", u"1", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Data_Win", u"2", None))
+
+        self.label_10.setText(QCoreApplication.translate("Data_Win", u"DataType:", None))
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("Data_Win", u"PrintData", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("Data_Win", u"ScannedData", None))
+
         self.label_7.setText(QCoreApplication.translate("Data_Win", u"Start Date :", None))
         self.label_8.setText(QCoreApplication.translate("Data_Win", u"End Date :", None))
         self.pushButton_4.setText(QCoreApplication.translate("Data_Win", u"Fetch", None))

@@ -705,7 +705,7 @@ class Ui_ConnectionWindow(object):
         self.pushButton_5.clicked["bool"].connect(self.pushButton_3.click)
         self.pushButton_6.clicked["bool"].connect(ConnectionWindow.close)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(ConnectionWindow)

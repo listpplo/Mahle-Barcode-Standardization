@@ -12,6 +12,7 @@ from DataWindow import Ui_Data_Win
 from popWindow import Ui_Form
 from namePopup import Ui_getName
 from plcMapping import Ui_PLCMapping
+from passwordUI import Ui_Form as passwordUI
 import yaml
 import subprocess
 import pymelsec as pymc
@@ -27,6 +28,33 @@ import pandas as pd
 from PLC_data import PLC
 
 
+class passwordPage(QWidget, passwordUI):
+    # password vaildation signal
+    validateSignal = Signal(bool)
+
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        self.popup = popUpWindow()
+        self.pushButton.clicked.connect(self.validatePassword)
+        self.lineEdit_2.editingFinished.connect(self.validatePassword)
+    
+    def validatePassword(self):
+        id = self.lineEdit.text()
+        passwd = self.lineEdit_2.text()
+        if id == "Mahle":
+            if passwd == "Mahle@@321":
+                self.validateSignal.emit(True)
+            else:
+                self.popup.whenCall("Error !!", "Please check the id or password")
+        else:
+            self.popup.whenCall("Error !!", "Please check the id and password")
+    
+    def showEvent(self, event):
+        self.lineEdit.clear()
+        self.lineEdit_2.clear()
+        return super().showEvent(event)
+
 class Mapping(Ui_PLCMapping, QWidget):
     def __init__(self, StName: str):
         super().__init__()
@@ -41,6 +69,8 @@ class Mapping(Ui_PLCMapping, QWidget):
         self.pushButton.clicked.connect(self.addData)
         self.pushButton_4.clicked.connect(self.deleteLast)
         self.pushButton_2.clicked.connect(self.saveMappingData)
+
+        self.setFixedSize(344, 356)
 
     def addData(self):
         row_count = self.tableWidget.rowCount()
@@ -528,19 +558,33 @@ class ShowDataWindow(Ui_Data_Win, QWidget):
     def SearchByDate(self):
         self.tableWidget_2.clearContents()
         self.tableWidget_2.setRowCount(0)
+        station = self.comboBox.currentIndex()
+        dataType = self.comboBox_2.currentText()
         startDate = self.dateEdit.date().toPython().__str__()
         endDate = self.dateEdit_2.date().toPython().__str__()
-        print(startDate, endDate)
-        df = pd.read_sql_query(f"SELECT * FROM data WHERE DATE BETWEEN '{startDate}' and '{endDate};'", self.db)
+        print(station, dataType, endDate)
+        if  station == 0:
+            df = pd.read_sql_query(f"SELECT * FROM '{dataType}'  WHERE GENDATE BETWEEN '{startDate}' and '{endDate};'", self.db)
+            self.tableWidget_2.makeTable(df)
+        elif station == 1:
+            df = pd.read_sql_query(f"SELECT * FROM 'PrintData2'  WHERE GENDATE BETWEEN '{startDate}' and '{endDate};'", self.db)
+            self.tableWidget_2.makeTable(df)
         # print(df)
-        self.tableWidget_2.makeTable(df)
+        
 
     def createExcel(self):
         startDate = self.dateEdit.date().toPython().__str__()
         endDate = self.dateEdit_2.date().toPython().__str__()
-        df = pd.read_sql_query(f"SELECT * FROM data WHERE DATE BETWEEN '{startDate}' and '{endDate};'", self.db)
-        df.to_excel(f"Excel/{startDate} to {endDate}.xlsx")
-        self.popup.whenCall(heading="Sucess !!!", mesg=f"Excel Created at Excel/{startDate} to {endDate}.xlsx")
+        station = self.comboBox.currentIndex()
+        dataType = self.comboBox_2.currentText()
+        if station == 0:
+            df = pd.read_sql_query(f"SELECT * FROM '{dataType}' WHERE GENDATE BETWEEN '{startDate}' and '{endDate};'", self.db)
+            df.to_excel(f"Excel/{startDate} to {endDate}.xlsx")
+            self.popup.whenCall(heading="Sucess !!!", mesg=f"Excel Created at Excel/{startDate} to {endDate}.xlsx")
+        elif station == 1:
+            df = pd.read_sql_query(f"SELECT * FROM '{dataType}2' WHERE GENDATE BETWEEN '{startDate}' and '{endDate};'", self.db)
+            df.to_excel(f"Excel/{startDate} to {endDate}.xlsx")
+            self.popup.whenCall(heading="Sucess !!!", mesg=f"Excel Created at Excel/{startDate} to {endDate}.xlsx")
 
 
 class MyApp(QMainWindow, Ui_MainWindow):
@@ -549,7 +593,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setupUi(self)
-        self.actionOpen_Recipie_Editor.triggered.connect(self.openRecipie)
+        self.actionOpen_Recipie_Editor.triggered.connect(lambda _: self.passwin.show())
         self.actionConnection_Settings.triggered.connect(self.openConnWindow)
         self.actionData.triggered.connect(self.showdata)
         self.pushButton_2.clicked.connect(self.runPLC)
@@ -557,10 +601,15 @@ class MyApp(QMainWindow, Ui_MainWindow):
         self.recWindow = RecWindow()
         self.connectionWindow = ConnWindow()
         self.datawindow = ShowDataWindow()
+        self.passwin = passwordPage()
+        self.passwin.validateSignal.connect(self.openRecipie)
         
+        # Starting the PLC Thread
         self.plc = PLC()
         self.plc.start()
         self.plc.logSignal.connect(self.commandHandler)
+        self.plc.fendSignal.connect(self.uiCommandHandler)
+
 
         # Creating popup window
         self.popup = popUpWindow()
@@ -576,25 +625,112 @@ class MyApp(QMainWindow, Ui_MainWindow):
             self.cur = self.db.cursor()
         except Exception as e:
             print(e)
+        
+    def getPasswordRecipe(self) -> None:
+        self.passwin.show()
 
-    def openRecipie(self) -> None:
+    @Slot(bool)
+    def openRecipie(self, event) -> None:
         self.recWindow.show()
+        self.passwin.close()
         self.plc.terminate()
 
     def openConnWindow(self) -> None:
         self.connectionWindow.show()
         self.plc.terminate()
 
-    def showdata(self):
+    def showdata(self) -> None:
         self.datawindow.show()
     
-    def runPLC(self):
+    def runPLC(self) -> None:
         self.plc.start()
     
     @Slot(str)
-    def commandHandler(self, command:str):
+    def commandHandler(self, command:str) -> None:
         self.textEdit.log(command)
 
+    @Slot(str)
+    def uiCommandHandler(self, command:str) -> None:
+        command_split = command.split(":")
+        match command_split[0]:
+            case "PLC":
+                match command_split[1]:
+                    case "Connected":
+                        self.pushButton.setStyleSheet("""
+                            QPushButton{
+                                border:2px dashed black;
+                                background-color: rgb(0, 255, 0);
+                            }
+                        """)
+                    case "Disconnected":
+                         self.pushButton.setStyleSheet("""
+                            QPushButton{
+                                border:2px dashed black;
+                                background-color: rgb(255, 0, 0);
+                            }
+                        """)
+            
+            case "ST-01":
+                match command_split[1]:
+                    case "printer":
+                        self.label_4.setText(command_split[2])
+                    case "recipe":
+                        self.label_5.setText(command_split[2])
+                    case "serialNo":
+                        self.label_21.setText(command_split[2])
+                    case "plcCommand":
+                        self.label_8.setText(command_split[2])
+                    case "barcode":
+                        self.label_24.setText(command_split[2])
+                    case "Barcode Check":
+                        match command_split[2]:
+                            case "OK":
+                                self.label_14.setText("OK")
+                                self.label_14.setStyleSheet("""
+                                    QLabel{
+                                        background-color: rgb(0, 255, 0);
+                                    }
+                            """)
+                                self.textEdit.log("Barcode Check at St-01 OK")
+                            case "NG":
+                                self.label_14.setText("NG")
+                                self.label_14.setStyleSheet("""
+                                    QLabel{
+                                        background-color: rgb(255, 0, 0);
+                                    }
+                            """)
+                                self.textEdit.log("Barcode check at St-01 NG")
+      
+            case "ST-02":
+                match command_split[1]:
+                    case "printer":
+                        self.label_10.setText(command_split[2])
+                    case "recipe":
+                        self.label_11.setText(command_split[2])
+                    case "serialNo":
+                        self.label_23.setText(command_split[2])
+                    case "plcCommand":
+                        self.label_12.setText(command_split[2])
+                    case "barcode":
+                        self.label_26.setText(command_split[2])
+                    case "Barcode Check":
+                        match command_split[2]:
+                            case "OK":
+                                self.label_16.setText("OK")
+                                self.label_16.setStyleSheet("""
+                                    QLabel{
+                                        background-color: rgb(0, 255, 0);
+                                    }
+                            """)
+                                self.textEdit.log("Barcode Check at St-02 OK")
+                            case "NG":
+                                self.label_16.setText("NG")
+                                self.label_16.setStyleSheet("""
+                                    QLabel{
+                                        background-color: rgb(255, 0, 0);
+                                    }
+                            """)
+                                self.textEdit.log("Barcode Check at St-02 NG")
 
     def closeEvent(self, event: QCloseEvent) -> None:
         self.plc.terminate()

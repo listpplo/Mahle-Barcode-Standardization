@@ -1,0 +1,51 @@
+
+            @page {
+                width: 20.0mm;
+                height: 25.0mm;
+                padding-left: 6.0mm;
+                padding-top : 2.0mm;
+            }
+            
+            img {
+                height: 10.0mm;
+                width: 10.0mm;
+                image-rendering: pixelated;
+                padding-left:5.0mm;
+                padding-top:0.0mm;
+            }
+            
+            .label_1 {
+                font-family: Verdana;
+                font-weight: bold;
+                font-size:1.8mm;
+                padding-left:0.0mm;
+                padding-top:0.0mm;
+                text-align:center;
+            }
+            
+            .label_2 {
+                font-family: Verdana;
+                font-weight: bold;
+                font-size:1.8mm;
+                padding-left:1.0mm;
+                padding-top:0.0mm;
+                text-align:center;
+            }
+            .label_3 {
+                font-family: Verdana;
+                font-weight: bold;
+                font-size:1.8mm;
+                padding-left:1.0mm;
+                padding-top:0.0mm;
+                text-align:center;
+            }
+            
+            .label_4 {
+                font-family: Verdana;
+                font-weight: bold;
+                font-size:1.8mm;
+                padding-left:1.0mm;
+                padding-top:0.0mm;
+                text-align:center;
+            }
+       

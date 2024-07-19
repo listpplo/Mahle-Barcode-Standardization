@@ -1,12 +1,13 @@
 import os
 import threading
-
+import sqlite3
 from pymelsec import Type3E
 from pymelsec.constants import DT
 from PySide6.QtCore import QThread, Signal, Slot
 from Decoder import Decoder
 import yaml
 from blabel import LabelWriter
+from datetime import datetime
 
 
 # self.keys = {"command_st01": self.lineEdit_3,
@@ -64,7 +65,10 @@ class PLC(QThread):
 
     def run(self):
         self.runThread = True
-        
+        # Creating data base connection
+        db = sqlite3.connect("Database/database.db")
+        cur = db.cursor()
+
         try:
             self.logSignal.emit("Sequence:File Loading:Loading PLC File")
             with open("Config/PLC.yaml") as file:
@@ -104,20 +108,26 @@ class PLC(QThread):
             except Exception as e:
                 self.logSignal.emit(f"Error:PLC Thread Error:{e}")
 
+                self.fendSignal.emit(f"ST-01:printer:{printerData['st_01_printer']}")
+                self.fendSignal.emit(f"ST-02:printer:{printerData['st_02_printer']}")
+
         while self.runThread:
             if self.plc is None:
                 try:
                     self.logSignal.emit("Sequence:Connection:Connecting to PLC")
                     self.plc = Type3E(host=plcData["ip"], port=plcData["port"], plc_type="Q")
                     self.plc.connect(port=plcData["port"], ip=plcData["ip"])
+                    self.fendSignal.emit("PLC:Connected")
                 except Exception as e:
                     self.logSignal.emit(f"Error:PLC Thread Error:{e}")
+                    self.fendSignal.emit("PLC:Disconnected")
                     self.plc = None
                     QThread.sleep(3)
                     print(e)
             else:
                 try:
                     command_st01 = self.plc.batch_read(ref_device=dataReg[nameHelper.command_st01], data_type=DT.UWORD, read_size=1)[0].value
+                    self.fendSignal.emit(f"ST-01:plcCommand:{command_st01}")
                     match command_st01:
                         case 0:
                             pass
@@ -150,6 +160,9 @@ class PLC(QThread):
                                 records = [
                                     dict(sample_id=barcode, sample_name=labels)
                                 ]
+                                
+                                cur.execute(f'INSERT INTO PrintData("TIMESTAMP", "GENDATE", "PRINTED_DATA") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode}");')
+                                db.commit()
 
                                 labelGen.write_labels(records, target="St01.pdf")
 
@@ -183,24 +196,40 @@ class PLC(QThread):
                                 ).split(" ")[0]
 
                                 # Sending barcode to front end
-                                self.fendSignal.emit(f"ST-01:Barcode:{barcode}")
+                                self.fendSignal.emit(f"ST-01:barcode:{barcode}")
+
+                                data = cur.execute(F"SELECT * FROM ScannedData WHERE SCANNED_BARCODE='{barcode_plc}'").fetchone()
 
                                 if barcode == barcode_plc:
-                                    self.logSignal.emit("Sequence: Barcode Check: Barcode Check Successful")
-                                    self.fendSignal.emit("ST-01:Barcode Check:OK")
-                                    self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[2], data_type=Dt.UWORD)
-                                    QThread.sleep(1)
-                                    self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[0], data_type=Dt.UWORD)
+                                    if len(data) == 0:
+                                        self.logSignal.emit("Sequence: Barcode Check: Barcode Check Successful")
+                                        self.fendSignal.emit("ST-01:Barcode Check:OK")
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[2], data_type=Dt.UWORD)
+                                        QThread.sleep(1)
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[0], data_type=Dt.UWORD)
+                                        cur.execute(f'INSERT INTO ScannedData("TIMESTAMP", "GENDATE", "SCANNED_BARCODE", "STATUS") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode_plc}", "OK")')
+                                        db.commit()
+                                    else:
+                                        self.fendSignal.emit("ST-01:Barcode Check:NG")
+                                        self.logSignal.emit("Sequence: Validation Error: Generated and Printed Barcode is Repeated")
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[4], data_type=Dt.UWORD)
+                                        QThread.sleep(1)
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[0], data_type=Dt.UWORD)
+                                        cur.execute(f'INSERT INTO ScannedData("TIMESTAMP", "GENDATE", "SCANNED_BARCODE", "STATUS") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode_plc}", "NG")')
+                                        db.commit()
                                 else:
                                     self.fendSignal.emit("ST-01:Barcode Check:NG")
                                     self.logSignal.emit("Sequence:Validation Error: Generated and Printed Barcode Falied")
                                     self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[3], data_type=Dt.UWORD)
                                     QThread.sleep(1)
                                     self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st01], values=[0], data_type=Dt.UWORD)
+                                    cur.execute(f'INSERT INTO ScannedData("TIMESTAMP", "GENDATE", "SCANNED_BARCODE", "STATUS") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode_plc}", "NG")')
+                                    db.commit()
                             except Exception as e:
                                 self.logSignal.emit(f"Error:Barcode Validation Error:{e}")
 
                     command_st02 = self.plc.batch_read(ref_device=dataReg[nameHelper.command_st02], data_type=DT.UWORD, read_size=1)[0].value
+                    self.fendSignal.emit(f"ST-02:plcCommand:{command_st02}")
                     match command_st02:
                         case 0:
                             pass
@@ -235,6 +264,8 @@ class PLC(QThread):
                                 ]
 
                                 labelGen.write_labels(records, target="St02.pdf")
+                                cur.execute(f'INSERT INTO PrintData2("TIMESTAMP", "GENDATE", "PRINTED_DATA") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode}");')
+                                db.commit()
 
                                 for i in range(ntp):
                                     try:
@@ -268,23 +299,39 @@ class PLC(QThread):
                                 # Sending barcode to front end
                                 self.fendSignal.emit(f"ST-02:Barcode:{barcode}")
 
+                                data = cur.execute(F"SELECT * FROM ScannedData2 WHERE SCANNED_BARCODE='{barcode_plc}'").fetchone()
+
                                 if barcode == barcode_plc:
-                                    self.logSignal.emit("Sequence: Barcode Check: Barcode Check Successful ST-02")
-                                    self.fendSignal.emit("ST-02:Barcode Check:OK")
-                                    self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[2], data_type=Dt.UWORD)
-                                    QThread.sleep(1)
-                                    self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[0], data_type=Dt.UWORD)
+                                    if len(data) == 0:
+                                        self.logSignal.emit("Sequence: Barcode Check: Barcode Check Successful ST-02")
+                                        self.fendSignal.emit("ST-02:Barcode Check:OK")
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[2], data_type=Dt.UWORD)
+                                        QThread.sleep(1)
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[0], data_type=Dt.UWORD)
+                                        cur.execute(f'INSERT INTO ScannedData2("TIMESTAMP", "GENDATE", "SCANNED_BARCODE", "STATUS") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode_plc}", "OK")')
+                                        db.commit()
+                                    else:
+                                        self.fendSignal.emit("ST-02:Barcode Check:NG")
+                                        self.logSignal.emit("Sequence: Validation Error: Repeat Barcode on St-02")
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[4], data_type=Dt.UWORD)
+                                        QThread.sleep(1)
+                                        self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[0], data_type=Dt.UWORD)
+                                        cur.execute(f'INSERT INTO ScannedData2("TIMESTAMP", "GENDATE", "SCANNED_BARCODE", "STATUS") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode_plc}", "NG")')
+                                        db.commit()
                                 else:
                                     self.fendSignal.emit("ST-02:Barcode Check:NG")
                                     self.logSignal.emit("Sequence: Validation Error: Generated and Printed Barcode Falied on St-02")
                                     self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[3], data_type=Dt.UWORD)
                                     QThread.sleep(1)
                                     self.plc.batch_write(ref_device=dataReg[nameHelper.respReg_st02], values=[0], data_type=Dt.UWORD)
+                                    cur.execute(f'INSERT INTO ScannedData2("TIMESTAMP", "GENDATE", "SCANNED_BARCODE", "STATUS") VALUES ("{datetime.now()}", "{datetime.now().date()}", "{barcode_plc}", "NG")')
+                                    db.commit()
                             except Exception as e:
                                 self.logSignal.emit(f"Error:Barcode Validation Error ST02:{e}")
 
                 except Exception as e:
                     self.logSignal.emit(f"Error:PLC Thread Error:{e}")
+                    self.fendSignal.emit("PLC:Disconnected")
                     self.plc = None
 
     def terminate(self):
